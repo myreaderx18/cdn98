@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">                          
+<!--<![endif]-->
+					<head>
+				    <meta charset="UTF-8" />
+				    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+            				    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+				    <link rel="profile" href="http://gmpg.org/xfn/11" />
+				    <link rel="pingback" href="http://sametmax.com/xmlrpc.php" />
+
+				   <!-- Icons font support for IE6-7  -->
+				    <!--[if lt IE 8]>
+				      <script src="http://sametmax.com/wp-content/themes/customizr/inc/assets/css/fonts/lte-ie7.js"></script>
+				    <![endif]-->
+				    <style type="text/css" id="customizr-inline-fonts">@font-face{font-family:genericons;src:url('http://sametmax.com/wp-content/themes/customizr/inc/assets/css/fonts/fonts/genericons-regular-webfont.eot');src:url('http://sametmax.com/wp-content/themes/customizr/inc/assets/css/fonts/fonts/genericons-regular-webfont.eot?#iefix') format('embedded-opentype'),url('http://sametmax.com/wp-content/themes/customizr/inc/assets/css/fonts/fonts/genericons-regular-webfont.woff') format('woff'),url('http://sametmax.com/wp-content/themes/customizr/inc/assets/css/fonts/fonts/genericons-regular-webfont.ttf') format('truetype'),url('http://sametmax.com/wp-content/themes/customizr/inc/assets/css/fonts/fonts/genericons-regular-webfont.svg#genericonsregular') format('svg')}@font-face{font-family:entypo;src:url('http://sametmax.com/wp-content/themes/customizr/inc/assets/css/fonts/fonts/entypo.eot);src:url(http://sametmax.com/wp-content/themes/customizr/inc/assets/css/fonts/fonts/entypo.eot?#iefix') format('embedded-opentype'),url('http://sametmax.com/wp-content/themes/customizr/inc/assets/css/fonts/fonts/entypo.woff') format('woff'),url('http://sametmax.com/wp-content/themes/customizr/inc/assets/css/fonts/fonts/entypo.ttf') format('truetype'),url('http://sametmax.com/wp-content/themes/customizr/inc/assets/css/fonts/fonts/entypo.svg#genericonsregular') format('svg')}</style><title>Vive setup.cfg (et mort à pyproject.toml) ! &#8211; Sam &amp; Max</title>
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//secure.gravatar.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Sam &amp; Max &raquo; Feed" href="http://sametmax.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Sam &amp; Max &raquo; Comments Feed" href="http://sametmax.com/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/sametmax.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.7"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='contact-form-7-css'  href='http://sametmax.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.0.2' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-polls-css'  href='http://sametmax.com/wp-content/plugins/wp-polls/polls-css.css?ver=2.73.8' type='text/css' media='all' />
+<style id='wp-polls-inline-css' type='text/css'>
+.wp-polls .pollbar {
+	margin: 1px;
+	font-size: 6px;
+	line-height: 8px;
+	height: 8px;
+	background-image: url('http://sametmax.com/wp-content/plugins/wp-polls/images/default/pollbg.gif');
+	border: 1px solid #c8c8c8;
+}
+
+</style>
+<link rel='stylesheet' id='wp-syntax-css-css'  href='http://sametmax.com/wp-content/plugins/wp-syntax/css/wp-syntax.css?ver=1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='http://sametmax.com/wp-includes/css/dashicons.min.css?ver=4.9.7' type='text/css' media='all' />
+<link rel='stylesheet' id='customizr-skin-css'  href='http://sametmax.com/wp-content/themes/customizr/inc/assets/css/black2.min.css?ver=3.2.10' type='text/css' media='all' />
+<style id='customizr-skin-inline-css' type='text/css'>
+
+.sticky-enabled .tc-shrink-on .site-logo img {
+						height:30px!important;width:auto!important
+					}
+
+					.sticky-enabled .tc-shrink-on .brand .site-title {
+						font-size:0.6em;opacity:0.8;line-height:1.2em
+					}
+
+.tc-rectangular-thumb {
+            max-height: 250px;
+            height :250px
+          }
+
+          .single .tc-rectangular-thumb {
+            max-height: 250px;
+            height :250px
+          }
+
+
+</style>
+<link rel='stylesheet' id='customizr-style-css'  href='http://sametmax.com/wp-content/themes/customizr/style.css?ver=3.2.10' type='text/css' media='all' />
+<link rel='stylesheet' id='fancyboxcss-css'  href='http://sametmax.com/wp-content/themes/customizr/inc/assets/js/fancybox/jquery.fancybox-1.3.4.min.css?ver=4.9.7' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack-widget-social-icons-styles-css'  href='http://sametmax.com/wp-content/plugins/jetpack/modules/widgets/social-icons/social-icons.css?ver=20170506' type='text/css' media='all' />
+<link rel='stylesheet' id='social-logos-css'  href='http://sametmax.com/wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=1' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='http://sametmax.com/wp-content/plugins/jetpack/css/jetpack.css?ver=6.3.2' type='text/css' media='all' />
+<script type='text/javascript' src='http://sametmax.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='http://sametmax.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var TCParams = {"FancyBoxState":"1","FancyBoxAutoscale":"1","SliderName":"","SliderDelay":"","SliderHover":"1","SmoothScroll":"linear","ReorderBlocks":"1","CenterSlides":"1","HasComments":"","LeftSidebarClass":".span3.left.tc-sidebar","RightSidebarClass":".span3.right.tc-sidebar","LoadModernizr":"1","stickyCustomOffset":"0","stickyHeader":"1","dropdowntoViewport":"0","timerOnScrollAllBrowsers":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://sametmax.com/wp-content/themes/customizr/inc/assets/js/tc-scripts.min.js?ver=3.2.10'></script>
+<link rel='https://api.w.org/' href='http://sametmax.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://sametmax.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://sametmax.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Programmation par contrat avec assert' href='http://sametmax.com/programmation-par-contrat-avec-assert/' />
+<link rel='next' title='Le don du mois: Libre Office' href='http://sametmax.com/le-don-du-mois-libre-office/' />
+<meta name="generator" content="WordPress 4.9.7" />
+<link rel="canonical" href="http://sametmax.com/vive-setup-cfg-et-mort-a-pyproject-toml/" />
+<link rel='shortlink' href='https://wp.me/p2ckfk-6wc' />
+<link rel="alternate" type="application/json+oembed" href="http://sametmax.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fsametmax.com%2Fvive-setup-cfg-et-mort-a-pyproject-toml%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://sametmax.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fsametmax.com%2Fvive-setup-cfg-et-mort-a-pyproject-toml%2F&#038;format=xml" />
+
+<link rel='dns-prefetch' href='//v0.wordpress.com'/>
+<style type="text/css" media="all">
+/* <![CDATA[ */
+@import url("http://sametmax.com/wp-content/plugins/wp-table-reloaded/css/plugin.css?ver=1.9.4");
+@import url("http://sametmax.com/wp-content/plugins/wp-table-reloaded/css/datatables.css?ver=1.9.4");
+/* ]]> */
+</style><link rel="shortcut icon" href="http://sametmax.com/wp-content/uploads/2015/06/favicon.png" type="image/png">
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Vive setup.cfg (et mort à pyproject.toml) !" />
+<meta property="og:url" content="http://sametmax.com/vive-setup-cfg-et-mort-a-pyproject-toml/" />
+<meta property="og:description" content="Saviez-vous qu&#8217;il existe un format simple, compatible avec tous vos outils et bien documenté qui permet de remplacer setup.py ? Qui existe depuis 2016 ? Et que pour nous aider, des gens veule…" />
+<meta property="article:published_time" content="2018-12-06T10:07:48+00:00" />
+<meta property="article:modified_time" content="2018-12-25T16:57:36+00:00" />
+<meta property="og:site_name" content="Sam &amp; Max" />
+<meta property="og:image" content="http://sametmax.com/wp-content/uploads/2018/12/giphy.gif" />
+<meta property="og:image:width" content="320" />
+<meta property="og:image:height" content="240" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:text:title" content="Vive setup.cfg (et mort à pyproject.toml) !" />
+<meta name="twitter:image" content="http://sametmax.com/wp-content/uploads/2018/12/giphy.gif?w=640" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- End Jetpack Open Graph Tags -->
+			<link rel="stylesheet" type="text/css" id="wp-custom-css" href="http://sametmax.com/?custom-css=3b3670f11a" />
+						    <!--Icons size hack for IE8 and less -->
+				    <!--[if lt IE 9]>
+				      <link href="http://sametmax.com/wp-content/themes/customizr/inc/assets/css/fonts/ie8-hacks.css" rel="stylesheet" type="text/css"/>
+				    <![endif]-->
+				</head>
+				
+	<body class="post-template-default single single-post postid-25060 single-format-standard tc-fade-hover-links tc-sticky-header tc-transparent-on-scroll" itemscope itemtype="http://schema.org/WebPage">
+		
+		
+	   	<header class="tc-header clearfix row-fluid tc-tagline-off tc-title-logo-on  tc-shrink-on tc-menu-on logo-left" role="banner">
+			      <div class="brand span3 pull-left ">
+
+        <h1><a class="site-title" href="http://sametmax.com/" title="Sam &amp; Max | Du code, du cul">Sam &amp; Max</a></h1>
+      </div> <!-- brand span3 pull-left -->
+      <div class="container outside"><h2 class="site-description">Du code, du cul</h2></div>      	<div class="navbar-wrapper clearfix span9 tc-submenu-fade tc-submenu-move tc-open-on-hover left">
+        	<div class="navbar resp">
+          		<div class="navbar-inner" role="navigation">
+            		<div class="row-fluid">
+              		<div class="social-block span5" ><a class="social-icon icon-feed" href="http://sametmax.com/feed/rss/" title="Subscribe to my rss feed"  ></a></div><h2 class="span7 inside site-description">Du code, du cul</h2><button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><div class="nav-collapse collapse tc-hover-menu-wrapper"><div class="menu-top-menu-container"><ul id="menu-top-menu-2" class="nav tc-hover-menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-1702"><a href="http://sametmax.com/category/programmation/">Prog</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1703"><a href="http://sametmax.com/category/administration-system/">Admin Sys</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1704"><a href="http://sametmax.com/category/philo-et-culture/">Philo &#038; culture</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1706"><a href="http://sametmax.com/category/cul/">Cul</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3340"><a href="http://sametmax.com/cours-et-tutos/">Cours &#038; tutos</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1707"><a title="Les meilleurs blogs du Web" href="http://multiboards.net/">Multiboards</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12415"><a href="http://sametmax.com/planet-python-fr/">Veille Python Fr</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15634"><a href="http://indexerror.net">Questions Python</a></li>
+</ul></div></div>          			</div>
+          		</div><!-- /.navbar-inner -->
+        	</div><!-- /.navbar resp -->
+      	</div><!-- /.navbar-wrapper -->
+    			</header>
+		<div id="tc-reset-margin-top" class="container-fluid" style="margin-top:103px"></div><div id="main-wrapper" class="container">
+
+        
+    <div class="container" role="main">
+        <div class="row column-content-wrapper">
+
+                            
+                <div id="content" class="span9 article-container">
+                    
+                    
+                        
+                                                                                    
+                                                                    <article id="post-25060" class="row-fluid post-25060 post type-post status-publish format-standard has-post-thumbnail hentry category-programmation tag-packaging tag-python">
+                                                <header class="entry-header">
+          <h1 class="entry-title format-icon">Vive setup.cfg (et mort à pyproject.toml) !</h1>            <div class="entry-meta">
+                This entry was posted in <a class="btn btn-mini" href="http://sametmax.com/category/programmation/" title="View all posts in Programmation"> Programmation </a> and tagged <a class="btn btn-mini btn-tag" href="http://sametmax.com/tag/packaging/" title="View all posts in packaging"> packaging </a><a class="btn btn-mini btn-tag" href="http://sametmax.com/tag/python/" title="View all posts in python"> python </a> on <a href="http://sametmax.com/2018/12/06/" title="10:07" rel="bookmark"><time class="entry-date updated" datetime="2018-12-06T10:07:48+00:00">06/12/2018</time></a> <span class="by-author">by <span class="author vcard"><a class="url fn n" href="http://sametmax.com/author/sam/" title="View all posts by Sam" rel="author">Sam</a></span></span>             </div><!-- .entry-meta -->
+            <hr class="featurette-divider __before_content">        </header>
+            
+
+          <section class="entry-content ">
+              <p>Après un long débat sur <a href="https://news.ycombinator.com/item?id=18612905">hackernews</a>, qui n&#8217;est que le reflet de toutes les conversations que j&#8217;ai déjà eues à ce sujet sur twitter, github, et divers mailling lists, il est grand temps de faire un article. Urgent même.</p>
+<p>Est-ce que vous savez quel chemin de croix on a vécu avec le packaging Python durant ces 15 dernières années ?</p>
+<p>D&#8217;abord on a <code>distutils</code>, <code>setuptools</code>, <code>distribute</code>, and <code>distribute2</code> qui ont tous été à un moment les &#8220;standards&#8221; recommandés pour packager une lib. Ensuite on a eu l&#8217;époque des <code>eggs</code>, <code>exe</code>, et autres trucs que <code>easy_install</code> allait chercher n&#8217;importe où dans la nature en suivant aveuglément des liens sur PyPi. Sans compter les machins qu&#8217;il fallait compiler à tout bout de champ. Et puis rien n&#8217;était chiffré au download, <code>pip</code> n&#8217;était pas packagé avec Python, il crevait sur des erreurs stupides type encodage mal géré&#8230;</p>
+<p>À ça se rajoute que virtualenv était un truc à part, avec plein de concurrents, et linkait les packages système par défaut. Sans oublier qu&#8217;on avait pas <code>Python -m</code>. </p>
+<p>Bref, le packaging Python, ça a été vraiment la merde. Avec en plus une doc de merde.</p>
+<p>Aujourd&#8217;hui, le standard <code>wheel</code> a énormément amélioré la donne. On a des tutos corrects (ex: <a href="http://sametmax.com/creer-un-setup-py-et-mettre-sa-bibliotheque-python-en-ligne-sur-pypi/">notre tuto sur comment créer son package avec setup.py</a>). <code>ensurepip</code> fait qu&#8217;on a une version récente du truc presque partout. </p>
+<p>En gros, notre situation est stable, saine. Améliorable de bien des façons, certes, mais un bon socle sur lequel s&#8217;appuyer.</p>
+<h2>
+    Arrive setup.cfg<br />
+</h2>
+<p>En 2016, l&#8217;équipe de <a href="https://pypi.org/project/setuptools/">setuptools</a>, la lib utilisée par à peu près tout le monde pour créer des packages en Python aujourd&#8217;hui, a créé le format <code>setup.cfg</code>, un fichier INI dont le but est de remplacer <code>setup.py</code>. </p>
+<p>Le problème de <code>setup.py</code> c&#8217;est que c&#8217;est du code Python exécutable, et en plus dépendant de la lib setuptools. Cela empêche non seulement l&#8217;interfaçage avec des outils externes, mais aussi freine l&#8217;émergence de nouveaux outils.</p>
+<p>En effet, il y a un désir de continuer à améliorer la situation du packaging en Python, comme on peut le voir avec des projets comme <a href="https://github.com/pypa/pipenv">pipenv</a> ou <a href="https://github.com/sdispater/poetry">poetry</a> (je recommande d&#8217;ailleurs fortement ce dernier, et je vous invite à voter sur <a href="https://github.com/sdispater/poetry/issues/704">cette issue</a> pour enfoncer le clou).</p>
+<p><code>setup.cfg</code> est la suite logique de tout ça, un format en texte brut, facile à manipuler pour le reste du monde. </p>
+<p>Et ça a été bien fait:</p>
+<ul>
+<li>
+        <code>setup.cfg</code> marche out of the box. Il n&#8217;y a rien à faire de particulier : si vous aviez un <code>setup.py</code>, vous pouvez juste le convertir en <code>setup.cfg</code>. Si vous avez un nouveau projet, vous pouvez juste écrire le <code>setup.cfg</code>. Il n&#8217;y a pas de piège. Ça marche depuis&#8230; 2016. Ouais.
+    </li>
+<li>
+        <code>setup.cfg</code> a <a href="https://setuptools.readthedocs.io/en/latest/setuptools.html#configuring-setup-using-setup-cfg-files">une documentation décente</a>. Si, si. C&#8217;est très améliorable, mais mieux que tout ce qu&#8217;on a jamais eu pour les premières années de <code>setup.py</code>
+    </li>
+<li>
+        <code>setup.cfg</code> couvre la plupart des cas de figure que <code>setup.py</code> faisait et se permet de rajouter des goodies très cools. <code>version = attr: src.__version__</code> inclue la version depuis __init__.py,  <code>"options.data_files"</code> remplace le MANIFEST et <code>"license =  file: LICENCE.txt"</code> injecte le corps de la licence depuis un fichier texte. Tous les hacks à la noix de <code>setup.py</code> ? Fini.
+    </li>
+<li>
+        C&#8217;est simple à utiliser. Voici quelques projets pour démontrer le bouzin: <a href="https://github.com/jleclanche/python-bna/blob/master/setup.cfg">exemple 1</a>, <a href="https://github.com/dj-stripe/dj-stripe/blob/master/setup.cfg">exemple 2</a>, <a href="https://github.com/jazzband/django-oauth-toolkit/blob/master/setup.cfg">exemple 3</a>, <a href="https://github.com/jazzband/django-push-notifications/blob/master/setup.cfg">exemple 4</a>. Ça se comprend même sans lire la doc !
+    </li>
+<li>
+        C&#8217;est compatible avec tous les outils legacy. En fait, il suffit de créer un fichier <code>setup.py</code> avec une seule ligne dedans (<code>import setuptools; setuptools.setup()</code>) et pouf, tout le worflow d&#8217;avant marche: <code>python setup.py develop</code>, <code>python setup.py sdist upload</code>, etc. Du coup, tout ce qui comprenanait <code>setup.py</code> (c&#8217;est à dire le putain de monde entier en Python) marche avec <code>setup.cfg</code>.
+    </li>
+</ul>
+<p>Donc setup.cfg, malgré des lacunes, c&#8217;est sympa.</p>
+<h2>
+    Setup.cfg, ou es-tu ?<br />
+</h2>
+<p>&#8220;Attend une minute, si c&#8217;est si bien que ça, pourquoi j&#8217;en ai jamais entendu parler ? Moi on m&#8217;a dit que <code>setup.cfg</code> il servait à rien&#8230;&#8221;</p>
+<p>Je ne vous le fais pas dire ! </p>
+<p>Je n&#8217;ai aucune idée de la raison pour laquelle cette information ne circule pas plus. La seule raison pour laquelle je l&#8217;ai trouvée c&#8217;est parce que je passe des heures à faire de la veille informationnelle en Python, et que je suis tombé dessus au détour d&#8217;un carrefour, dans une ruelle sombre du Web. Et que j&#8217;ai pris le temps et le risque de le tester sur un de mes projets pour vérifier que oui, ça marche comme prévu.</p>
+<p>Même la doc Python <a href="https://docs.python.org/3.7/distutils/configfile.html">vous fait croire</a> que <code>setup.cfg</code> c&#8217;est un artéfact vaguement utile pour une pauvre option monoligne.</p>
+<p>Et merde, j&#8217;ai déjà écrit 900 articles sur ce blog, je ne peux pas mettre à ma charge d&#8217;avertir tout le monde pour chaque truc à savoir sur Python.</p>
+<p>C&#8217;est comme pour le <code># -*- coding: utf-8 -*-</code>. Un jour un mec utilisant Emacs a écrit un tuto avec ça, et tout le monde a copié-collé les hiéroglyphes alors qu&#8217;en fait <code># coding: utf8</code> est parfaitement valide. Ou comme <a href="http://nuitka.net/">nuikta</a>, qui permet de compiler de Python de manière fiable, et que personne ne connait. Combien de temps doit-on gâcher avec des trucs comme ça ?</p>
+<h2>
+   pyproject.toml vient foutre le bordel<br />
+</h2>
+<p>Maintenant, figurez-vous que nous avons un groupe de personnes chargées de faire évoluer la situation du packaging, la Python Packaging Authority, ou <a href="https://www.pypa.io/en/latest/
+">PyPA</a>.</p>
+<p>Une très bonne initiative, vu que le free-for-all du passé ne nous avait pas trop réussi. Et un succès puisque la situation actuelle en packaging Python est maintenant beaucoup plus propre.</p>
+<p>Et on en a besoin. En effet, <code>setup.cfg</code> doit être amélioré car il a certains défauts. Le format n&#8217;est pas parfaitement standardisé. Seule la doc fait figure de description, et pour l&#8217;instant <code>setup.cfg</code>, c&#8217;est whatever <a href="https://docs.python.org/3/library/configparser.html">configparser</a> comprends, sachant que <code>configparser</code> parse les trucs au motoculteur, et selon la version de Python. C&#8217;est pas gravissime, et ça n&#8217;a pas vraiment été un problème jusque là, mais pour la pérennité de la chose, une consolidation est nécessaire. On doit avoir une spec solide, un parseur robuste et stable, etc.</p>
+<p>Sachant la purge qu&#8217;a été l&#8217;historique du packaging en Python, on s&#8217;attend donc a ce que la PyPA fasse le choix de standardiser <code>setup.cfg</code>, qui marche depuis 2 ans, fait le job, est compatible avec l&#8217;existant et résout déjà le problème de permettre au reste du monde de manipuler les données du package en texte brut. Puis, comme un bon groupe de décision sage, elle va proposer des solutions incrémentales aux défauts de <code>setup.cfg</code> et son écosystème. </p>
+<p>Un exemple possible serait de s&#8217;allier avec l&#8217;équipe de <code>setuptools</code> pour figer le format <code>setup.cfg</code>, clarifier les edge cases de ce INI en particulier, et si besoin, créer une alternative a <code>configparser</code> (ou figer <code>configparser</code>) afin d&#8217;obtenir une implémentation de référence irréprochable pour parser le format. Puis désigner ce format comme le nouveau standard, en version 1 implicite, et le documenter puis en faire la promotion afin que tous les nouveaux outils puissent l&#8217;utiliser. Ensuite, ayant identifié des limitations, on crée le successeur de ce format, qui aura le même nom, mais un header de version qui lui sera explicite afin de permettre aux parseurs de s&#8217;adapter. Et on fait en sorte que cette nouvelle version soit plus propre, plus belle, super green. Et on l&#8217;introduit aussi progressivement et en douceur qu&#8217;un sex toy anal.</p>
+<p>Bref, on s&#8217;attend à ce que la PyPA nous amène vers une totale liberté de pensée cosmique vers un nouvel âge réminiscence.</p>
+<p>Sauf que non.</p>
+<p>Ces ânes ont décidé&#8230;  de créer <a href="https://www.python.org/dev/peps/pep-0518/">un nouveau format</a> et ignorer tout l&#8217;existant. </p>
+<p>Fuck. That. Je hais que ce dessin de XKCD puisse être d&#8217;actualité encore et encore, chaque mois que l&#8217;humanité passe:<br />
+<img src=" https://imgs.xkcd.com/comics/standards.png" alt="Le packaging en Python, c'est une forme de solidarité masochiste avec la communauté JS" /></p>
+<p>Je ne comprends pas cette décision, et leurs justifications sont d&#8217;une grande faiblesse, pour ne pas dire insultante pour une communauté qui en a marre de payer le prix de l&#8217;égo des gens qui ont envie d&#8217;avoir leur nom sur la nouvelle barre de fer officielle.</p>
+<p>C&#8217;est d&#8217;autant plus étrange que la PyPA n&#8217;est pas composée de cons. Non. On a Brett Cannon (core dev, qui fait un travail exceptionnel avec Python VSCode), Nathaniel Smith (qui nous a révolutionné l&#8217;async avec trio) et Kenneth Reitz (l&#8217;auteur de Python requests).</p>
+<p>Comment ce pet de cerveau a-t-il pu émané de ces brillantes personnes, je ne le sais.</p>
+<p>Mais je vous invite tous à non seulement utiliser <code>setup.cfg</code> en masse, mais aussi à activement contester cette décision sur tous les mediums à votre disposition. </p>
+<p>Parce qu&#8217;évidemment je l&#8217;ai faits, et comme d&#8217;hab, ils font la sourde oreille. Et on va en payer le prix. Mais bon, depuis le temps, vous avez l&#8217;habitude. C&#8217;est pas comme si j&#8217;avais pas déjà annoncé que redux et dockers étaient overkill pour la plupart des projets, que le NoSQL allait avoir un retour de baton, que vue était génial, flask PAS pour les débutants, bitcoin intéressant, pipenv &#8211;three stupide, python parfait pour l&#8217;enseignement&#8230; des années avant. Pour les consultations de boule de cristal, c&#8217;est uniquement le mardi à 15h.</p>
+<h2>
+    N&#8217;est-ce pas trop tard ?<br />
+</h2>
+<p>Au contraire, c&#8217;est exactement le bon moment. Le format le plus utilisé actuellement n&#8217;est ni le setup.cfg, ni le pyproject.toml, mais toujours le bon vieux setup.py. En fait, n&#8217;en déplaise aux defenseurs de pyproject.toml qui veulent nous faire croire que le projet est bien plus populaire et avancé qu&#8217;il ne l&#8217;est vraiment, il vaut l&#8217;équivalent d&#8217;un draft de proposal en beta testing. Une simple recherche github retourne:</p>
+<ul>
+<li>
+        <a href="https://github.com/search?q=filename%3Asetup.py">setup.py: 1,259,007 results</a>
+    </li>
+<li>
+        <a href="https://github.com/search?q=filename%3Asetup.cfg">setup.cfg: 165,716 results</a>
+    </li>
+<li>
+        <a href="https://github.com/search?q=filename%3Apyproject.toml">pyproject.toml: 2,137 results </a>
+    </li>
+</ul>
+<p>De toute façon la transition sera longue, et les outils commencent à peine à supporter le nouveau format. En fait, ils ne sont même pas d&#8217;accord sur comment l&#8217;utiliser. On n&#8217;a pas de standard pour le lock file (pipfile semble se dégager, mais n&#8217;est pas enterriné) et les outils utilisent pyproject.toml en créant une section custo dedans au lieu des champs standardisés (poetry), voire pas du tout comme pipenv. De plus, setup.cfg est déjà utilisé dans la nature (voir les exemples plus haut).</p>
+<p>Par ailleurs, extraire les données de setup.cfg plutôt que de pyproject.toml n&#8217;est pas très compliqué, les outils de packaging n&#8217;ont qu&#8217;une toute petite partie de leur code dédié à la gestion du fichier, le reste c&#8217;est la logique de management des dépendances, le téléchargement, la command line, le virtualenv, etc. Ils peuvent par ailleurs tout à fait supporter les deux pendant la transition.</p>
+<p>Vu que c&#8217;est nous qui allons nous coltiner les conséquences du choix pour les 10 prochaines années à venir, autant élever la voie. D&#8217;autant que, surprise, ça ne coûte quasiment rien à la majorité des projets de migrer ou commencer avec setup.cfg. Tout marche déjà, et on peut produire de jolies wheels. On ne peut pas dire autant de pyproject qui demande d&#8217;adopter des outils tout neufs et qui doivent encore faire leur preuve. Aussi, bonne chance pour faire marcher votre toolchain de CI avec, j&#8217;ai essayé, et croyez moi c&#8217;est relou.</p>
+<p>Maintenant, j&#8217;aime que le packaging avance. J&#8217;aime même les nouveaux outils comme poetry. Mais la suite n&#8217;est pas inéluctable, et on peut concilier modernité avec sanité.</p>
+<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-official sd-sharing"><h3 class="sd-title">Partager:</h3><div class="sd-content"><ul><li class="share-twitter"><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://sametmax.com/vive-setup-cfg-et-mort-a-pyproject-toml/" data-text="Vive setup.cfg (et mort à pyproject.toml) !"  >Tweet</a></li><li class="share-facebook"><div class="fb-share-button" data-href="http://sametmax.com/vive-setup-cfg-et-mort-a-pyproject-toml/" data-layout="button_count"></div></li><li class="share-google-plus-1"><div class="googleplus1_button"><div class="g-plus" data-action="share" data-annotation="bubble" data-href="http://sametmax.com/vive-setup-cfg-et-mort-a-pyproject-toml/"></div></div></li><li class="share-email"><a rel="nofollow" data-shared="" class="share-email sd-button" href="http://sametmax.com/vive-setup-cfg-et-mort-a-pyproject-toml/?share=email" rel="noopener noreferrer" target="_blank" title="Click to email this to a friend"><span>Email</span></a></li><li><a href="#" class="sharing-anchor sd-button share-more"><span>More</span></a></li><li class="share-end"></li></ul><div class="sharing-hidden"><div class="inner" style="display: none;"><ul><li class="share-reddit"><div class="reddit_button"><iframe src="http://www.reddit.com/static/button/button1.html?newwindow=true&width=120&amp;url=http%3A%2F%2Fsametmax.com%2Fvive-setup-cfg-et-mort-a-pyproject-toml%2F&amp;title=Vive%20setup.cfg%20%28et%20mort%20%C3%A0%20pyproject.toml%29%20%21" height="22" width="120" scrolling="no" frameborder="0"></iframe></div></li><li class="share-pinterest"><div class="pinterest_button"><a href="https://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fsametmax.com%2Fvive-setup-cfg-et-mort-a-pyproject-toml%2F&#038;media=http%3A%2F%2Fsametmax.com%2Fwp-content%2Fuploads%2F2018%2F12%2Fgiphy.gif&#038;description=Vive%20setup.cfg%20%28et%20mort%20%C3%A0%20pyproject.toml%29%20%21" data-pin-do="buttonPin" data-pin-config="beside"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a></div></li><li class="share-end"></li><li class="share-tumblr"><a target="_blank" href="https://www.tumblr.com/share/link/?url=http%3A%2F%2Fsametmax.com%2Fvive-setup-cfg-et-mort-a-pyproject-toml%2F&name=Vive%20setup.cfg%20%28et%20mort%20%C3%A0%20pyproject.toml%29%20%21" title="Share on Tumblr" style="display:inline-block; text-indent:-9999px; overflow:hidden; width:62px; height:20px; background:url('https://platform.tumblr.com/v1/share_2.png') top left no-repeat transparent;">Share on Tumblr</a></li><li class="share-pocket"><div class="pocket_button"><a href="https://getpocket.com/save" class="pocket-btn" data-lang="en" data-save-url="http://sametmax.com/vive-setup-cfg-et-mort-a-pyproject-toml/" data-pocket-count="horizontal" >Pocket</a></div></li><li class="share-end"></li><li class="share-end"></li></ul></div></div></div></div></div>                        </section><!-- .entry-content -->
+
+        <footer class="entry-meta"><hr class="featurette-divider"><div class="author-info"><div class="row-fluid"><div class="comment-avatar author-avatar span2"><img alt='' src='http://2.gravatar.com/avatar/bf9ecde8f5e286de6ce5c80206cf9dd6?s=100&#038;d=retro&#038;r=x' srcset='http://2.gravatar.com/avatar/bf9ecde8f5e286de6ce5c80206cf9dd6?s=200&#038;d=retro&#038;r=x 2x' class='avatar avatar-100 photo' height='100' width='100' /></div> <div class="author-description span10"><h3>About Sam</h3><p>Waf !</p><div class="author-link"><a href="http://sametmax.com/author/sam/" rel="author">View all posts by Sam <span class="meta-nav">&rarr;</span></a></div></div></div></div></footer>                                    </article>
+                                
+                            
+                        
+                    
+<div id="comments" class="comments-area" >
+	</div><!-- #comments .comments-area -->
+
+
+<div class="ie-comment">
+Des questions Python sans rapport avec l'article ? Posez-les sur <a href="http://indexerror.net">IndexError</a>.
+
+</div>
+        
+          <hr class="featurette-divider __after_loop">
+          <nav id="nav-below" class="navigation" role="navigation">
+
+              <h3 class="assistive-text">
+                Post navigation              </h3>
+
+              <ul class="pager">
+                                  <li class="previous">
+                    <span class="nav-previous">
+                      <a href="http://sametmax.com/programmation-par-contrat-avec-assert/" rel="prev"><span class="meta-nav">&larr;</span> Programmation par contrat avec assert</a>                    </span>
+                  </li>
+                                                  <li class="next">
+                    <span class="nav-next">
+                        <a href="http://sametmax.com/le-don-du-mois-libre-office/" rel="next">Le don du mois: Libre Office <span class="meta-nav">&rarr;</span></a>                    </span>
+                  </li>
+                              </ul>
+
+          </nav><!-- #nav-below .navigation -->
+
+        
+        
+                </div><!--.article-container -->
+
+                    
+        <div class="span3 right tc-sidebar">
+           <div id="right" class="widget-area" role="complementary">
+                                                      <aside id="text-9" class="widget widget_text">			<div class="textwidget"><p style="font-size:1.3em"><a href="http://sametmax.com/mais-ou-je-suis-tombee-la/">Mais où je suis tombé(e) là ?</a></p></div>
+		</aside><aside id="text-7" class="widget widget_text">			<div class="textwidget"><img src="http://www.adobe.com/images/pdficon_small.png" width="16" height="16"/> <a href="http://pdfcrowd.com/url_to_pdf/">Télécharger cette page en PDF</a> </div>
+		</aside><aside id="text-4" class="widget widget_text">			<div class="textwidget"><br><br><a href="http://sametmax.com/appel-a-contributeurs-impertinents/"><img src="http://sametmax.com/wp-content/uploads/2012/07/contributeur.png" width="288px" style="vertical-align: middle;margin-top:-40px;margin-bottom:10px;"></a> </div>
+		</aside><aside id="blog_subscription-4" class="widget jetpack_subscription_widget"><h3 class="widget-title">Souscrire à nos conneries</h3>
+			<form action="#" method="post" accept-charset="utf-8" id="subscribe-blog-blog_subscription-4">
+				<div id="subscribe-text"><p>Entrez votre adresse mail et vous recevrez une notification à chaque nouvel article.</p>
+</div><p>Join 1,564 other subscribers</p>
+					<p id="subscribe-email">
+						<label id="jetpack-subscribe-label" for="subscribe-field-blog_subscription-4">
+							Email Address						</label>
+						<input type="email" name="email" required="required" class="required" value="" id="subscribe-field-blog_subscription-4" placeholder="Email Address" />
+					</p>
+
+					<p id="subscribe-submit">
+						<input type="hidden" name="action" value="subscribe" />
+						<input type="hidden" name="source" value="http://sametmax.com/vive-setup-cfg-et-mort-a-pyproject-toml/" />
+						<input type="hidden" name="sub-type" value="widget" />
+						<input type="hidden" name="redirect_fragment" value="blog_subscription-4" />
+												<input type="submit" value="J&#039;adhère, bon dieu !" name="jetpack_subscriptions_widget" />
+					</p>
+							</form>
+
+			<script>
+			/*
+			Custom functionality for safari and IE
+			 */
+			(function( d ) {
+				// In case the placeholder functionality is available we remove labels
+				if ( ( 'placeholder' in d.createElement( 'input' ) ) ) {
+					var label = d.querySelector( 'label[for=subscribe-field-blog_subscription-4]' );
+						label.style.clip 	 = 'rect(1px, 1px, 1px, 1px)';
+						label.style.position = 'absolute';
+						label.style.height   = '1px';
+						label.style.width    = '1px';
+						label.style.overflow = 'hidden';
+				}
+
+				// Make sure the email value is filled in before allowing submit
+				var form = d.getElementById('subscribe-blog-blog_subscription-4'),
+					input = d.getElementById('subscribe-field-blog_subscription-4'),
+					handler = function( event ) {
+						if ( '' === input.value ) {
+							input.focus();
+
+							if ( event.preventDefault ){
+								event.preventDefault();
+							}
+
+							return false;
+						}
+					};
+
+				if ( window.addEventListener ) {
+					form.addEventListener( 'submit', handler, false );
+				} else {
+					form.attachEvent( 'onsubmit', handler );
+				}
+			})( document );
+			</script>
+				
+</aside><aside id="tag_cloud-3" class="widget widget_tag_cloud"><h3 class="widget-title">TagCloud</h3><div class="tagcloud"><a href="http://sametmax.com/tag/0bin/" class="tag-cloud-link tag-link-148 tag-link-position-1" style="font-size: 9.04pt;" aria-label="0bin (11 items)">0bin</a>
+<a href="http://sametmax.com/tag/angularjs/" class="tag-cloud-link tag-link-443 tag-link-position-2" style="font-size: 8.4pt;" aria-label="angularjs (9 items)">angularjs</a>
+<a href="http://sametmax.com/tag/asyncio/" class="tag-cloud-link tag-link-922 tag-link-position-3" style="font-size: 9.04pt;" aria-label="asyncio (11 items)">asyncio</a>
+<a href="http://sametmax.com/tag/autobahn/" class="tag-cloud-link tag-link-979 tag-link-position-4" style="font-size: 8.4pt;" aria-label="autobahn (9 items)">autobahn</a>
+<a href="http://sametmax.com/tag/bash/" class="tag-cloud-link tag-link-14 tag-link-position-5" style="font-size: 10.8pt;" aria-label="bash (19 items)">bash</a>
+<a href="http://sametmax.com/tag/bitcoin/" class="tag-cloud-link tag-link-320 tag-link-position-6" style="font-size: 8.4pt;" aria-label="bitcoin (9 items)">bitcoin</a>
+<a href="http://sametmax.com/tag/blog/" class="tag-cloud-link tag-link-107 tag-link-position-7" style="font-size: 11.84pt;" aria-label="blog (26 items)">blog</a>
+<a href="http://sametmax.com/tag/cache/" class="tag-cloud-link tag-link-333 tag-link-position-8" style="font-size: 8.72pt;" aria-label="cache (10 items)">cache</a>
+<a href="http://sametmax.com/tag/comprehension-lists/" class="tag-cloud-link tag-link-20 tag-link-position-9" style="font-size: 8pt;" aria-label="comprehension-lists (8 items)">comprehension-lists</a>
+<a href="http://sametmax.com/tag/crossbar/" class="tag-cloud-link tag-link-1046 tag-link-position-10" style="font-size: 8.4pt;" aria-label="crossbar (9 items)">crossbar</a>
+<a href="http://sametmax.com/tag/css/" class="tag-cloud-link tag-link-188 tag-link-position-11" style="font-size: 8.4pt;" aria-label="css (9 items)">css</a>
+<a href="http://sametmax.com/tag/cul-2/" class="tag-cloud-link tag-link-33 tag-link-position-12" style="font-size: 9.28pt;" aria-label="cul (12 items)">cul</a>
+<a href="http://sametmax.com/tag/dict/" class="tag-cloud-link tag-link-435 tag-link-position-13" style="font-size: 8pt;" aria-label="dict (8 items)">dict</a>
+<a href="http://sametmax.com/tag/django/" class="tag-cloud-link tag-link-28 tag-link-position-14" style="font-size: 16pt;" aria-label="django (89 items)">django</a>
+<a href="http://sametmax.com/tag/don/" class="tag-cloud-link tag-link-1210 tag-link-position-15" style="font-size: 10.48pt;" aria-label="don (17 items)">don</a>
+<a href="http://sametmax.com/tag/encoding/" class="tag-cloud-link tag-link-54 tag-link-position-16" style="font-size: 8.72pt;" aria-label="encoding (10 items)">encoding</a>
+<a href="http://sametmax.com/tag/git/" class="tag-cloud-link tag-link-18 tag-link-position-17" style="font-size: 12.88pt;" aria-label="git (35 items)">git</a>
+<a href="http://sametmax.com/tag/http/" class="tag-cloud-link tag-link-204 tag-link-position-18" style="font-size: 9.6pt;" aria-label="http (13 items)">http</a>
+<a href="http://sametmax.com/tag/import/" class="tag-cloud-link tag-link-215 tag-link-position-19" style="font-size: 8.4pt;" aria-label="import (9 items)">import</a>
+<a href="http://sametmax.com/tag/ipython/" class="tag-cloud-link tag-link-164 tag-link-position-20" style="font-size: 8.72pt;" aria-label="ipython (10 items)">ipython</a>
+<a href="http://sametmax.com/tag/iterable/" class="tag-cloud-link tag-link-217 tag-link-position-21" style="font-size: 9.84pt;" aria-label="iterable (14 items)">iterable</a>
+<a href="http://sametmax.com/tag/javascript/" class="tag-cloud-link tag-link-96 tag-link-position-22" style="font-size: 14.08pt;" aria-label="javascript (50 items)">javascript</a>
+<a href="http://sametmax.com/tag/jquery/" class="tag-cloud-link tag-link-112 tag-link-position-23" style="font-size: 8pt;" aria-label="jquery (8 items)">jquery</a>
+<a href="http://sametmax.com/tag/linux/" class="tag-cloud-link tag-link-238 tag-link-position-24" style="font-size: 9.04pt;" aria-label="linux (11 items)">linux</a>
+<a href="http://sametmax.com/tag/meta/" class="tag-cloud-link tag-link-102 tag-link-position-25" style="font-size: 17.52pt;" aria-label="meta (138 items)">meta</a>
+<a href="http://sametmax.com/tag/mysql/" class="tag-cloud-link tag-link-82 tag-link-position-26" style="font-size: 8pt;" aria-label="mysql (8 items)">mysql</a>
+<a href="http://sametmax.com/tag/nginx/" class="tag-cloud-link tag-link-183 tag-link-position-27" style="font-size: 9.84pt;" aria-label="nginx (14 items)">nginx</a>
+<a href="http://sametmax.com/tag/nsfw/" class="tag-cloud-link tag-link-319 tag-link-position-28" style="font-size: 9.84pt;" aria-label="nsfw (14 items)">nsfw</a>
+<a href="http://sametmax.com/tag/pep8/" class="tag-cloud-link tag-link-552 tag-link-position-29" style="font-size: 8pt;" aria-label="pep8 (8 items)">pep8</a>
+<a href="http://sametmax.com/tag/pip/" class="tag-cloud-link tag-link-344 tag-link-position-30" style="font-size: 8.72pt;" aria-label="pip (10 items)">pip</a>
+<a href="http://sametmax.com/tag/poo/" class="tag-cloud-link tag-link-549 tag-link-position-31" style="font-size: 10pt;" aria-label="poo (15 items)">poo</a>
+<a href="http://sametmax.com/tag/python/" class="tag-cloud-link tag-link-4 tag-link-position-32" style="font-size: 22pt;" aria-label="python (496 items)">python</a>
+<a href="http://sametmax.com/tag/python-3/" class="tag-cloud-link tag-link-365 tag-link-position-33" style="font-size: 8.4pt;" aria-label="python 3 (9 items)">python 3</a>
+<a href="http://sametmax.com/tag/redis/" class="tag-cloud-link tag-link-196 tag-link-position-34" style="font-size: 8.72pt;" aria-label="redis (10 items)">redis</a>
+<a href="http://sametmax.com/tag/ruby/" class="tag-cloud-link tag-link-325 tag-link-position-35" style="font-size: 8pt;" aria-label="ruby (8 items)">ruby</a>
+<a href="http://sametmax.com/tag/shell/" class="tag-cloud-link tag-link-202 tag-link-position-36" style="font-size: 8.72pt;" aria-label="shell (10 items)">shell</a>
+<a href="http://sametmax.com/tag/sublime-text/" class="tag-cloud-link tag-link-76 tag-link-position-37" style="font-size: 8.4pt;" aria-label="sublime text (9 items)">sublime text</a>
+<a href="http://sametmax.com/tag/ubuntu/" class="tag-cloud-link tag-link-255 tag-link-position-38" style="font-size: 10.24pt;" aria-label="ubuntu (16 items)">ubuntu</a>
+<a href="http://sametmax.com/tag/unicode/" class="tag-cloud-link tag-link-53 tag-link-position-39" style="font-size: 8.4pt;" aria-label="unicode (9 items)">unicode</a>
+<a href="http://sametmax.com/tag/unit-tests/" class="tag-cloud-link tag-link-302 tag-link-position-40" style="font-size: 8.72pt;" aria-label="unit tests (10 items)">unit tests</a>
+<a href="http://sametmax.com/tag/unpacking/" class="tag-cloud-link tag-link-180 tag-link-position-41" style="font-size: 8pt;" aria-label="unpacking (8 items)">unpacking</a>
+<a href="http://sametmax.com/tag/virtualenv/" class="tag-cloud-link tag-link-259 tag-link-position-42" style="font-size: 9.04pt;" aria-label="virtualenv (11 items)">virtualenv</a>
+<a href="http://sametmax.com/tag/wamp/" class="tag-cloud-link tag-link-1039 tag-link-position-43" style="font-size: 10pt;" aria-label="wamp (15 items)">wamp</a>
+<a href="http://sametmax.com/tag/web-2/" class="tag-cloud-link tag-link-758 tag-link-position-44" style="font-size: 8pt;" aria-label="web (8 items)">web</a>
+<a href="http://sametmax.com/tag/yield/" class="tag-cloud-link tag-link-287 tag-link-position-45" style="font-size: 8.4pt;" aria-label="yield (9 items)">yield</a></div>
+</aside><aside id="text-5" class="widget widget_text"><h3 class="widget-title"> Envoyez des sioux</h3>			<div class="textwidget"><p><img src="http://sametmax.com/wp-content/uploads/2013/07/bitcoin.png" width="16" height="16"/> On adooooore les bitcoins :</p>
+
+<p>
+
+<a href="bitcoin:19zAHPPuce4BAhsdy9KaFwVLurEJXMhMAn?amount=1X8&label=SamEtMax">19zAHPPuce4BAhsdy9KaFwVLurEJXMhMAn</a>
+
+</p></div>
+		</aside><aside id="nav_menu-3" class="widget widget_nav_menu"><h3 class="widget-title">Nos projets</h3><div class="menu-nos-projets-container"><ul id="menu-nos-projets" class="menu"><li id="menu-item-15841" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15841"><a href="http://multiboards.net/">Multiboards &#8211; l&#8217;actu geek fr en une page</a></li>
+<li id="menu-item-15837" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15837"><a href="http://0bin.net">0bin &#8211; le pastebin chiffré</a></li>
+<li id="menu-item-15838" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15838"><a href="http://allthatcounts.net">All that counts &#8211; compteur pour jeux</a></li>
+<li id="menu-item-15839" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15839"><a href="https://github.com/sametmax/django-quicky">Django quicky &#8211; quick views for Django</a></li>
+<li id="menu-item-15840" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15840"><a href="https://github.com/sametmax/VizHash.js">VizHash.js &#8211; Hash visuels</a></li>
+<li id="menu-item-15842" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15842"><a href="https://github.com/sametmax/codes-des-articles">Code des articles du blog</a></li>
+</ul></div></aside><aside id="text-11" class="widget widget_text"><h3 class="widget-title"> </h3>			<div class="textwidget"> </div>
+		</aside><aside id="meta-3" class="widget widget_meta"><h3 class="widget-title">Meta</h3>			<ul>
+						<li><a href="http://sametmax.com/wp-login.php">Log in</a></li>
+			<li><a href="http://sametmax.com/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://sametmax.com/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+			</aside>                                              </div><!-- #left or #right-->
+        </div><!--.tc-sidebar -->
+
+        
+        </div><!--.row -->
+    </div><!-- .container role: main -->
+
+    
+</div><!--#main-wrapper"-->
+
+		<!-- FOOTER -->
+		<footer id="footer" class="">
+		 					<div class="container footer-widgets ">
+					<div class="row widget-area" role="complementary">
+												
+							<div id="footer_one" class="span4">
+																
+										<aside id="nav_menu-2" class="widget widget_nav_menu"><h3 class="widget-title">Hors du blog</h3><div class="menu-bottom-menu-container"><ul id="menu-bottom-menu" class="menu"><li id="menu-item-2391" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2391"><a href="http://sametmax.com/contactez-nous/">Page de contact</a></li>
+<li id="menu-item-12230" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12230"><a href="http://twitter.com/sam_et_max">@sam_et_max sur twitter</a></li>
+<li id="menu-item-12285" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12285"><a href="http://bridge.suumitsu.eu/?action=display&#038;bridge=TwitterBridge&#038;u=sam_et_max&#038;format=AtomFormat">Nos tweets en RSS</a></li>
+<li id="menu-item-12231" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12231"><a href="https://github.com/sametmax/">Fork me, I&#8217;m famous (github)</a></li>
+</ul></div></aside>
+																							</div><!-- .{$key}_widget_class -->
+
+						
+							<div id="footer_two" class="span4">
+																
+										<aside id="text-8" class="widget widget_text">			<div class="textwidget">Tous les textes de ce blog, sauf signalement contraire, sont sous licence <a href="http://creativecommons.org/licenses/by/3.0/">creative common 3.0 unported</a>.</div>
+		</aside>
+																							</div><!-- .{$key}_widget_class -->
+
+						
+							<div id="footer_three" class="span4">
+																
+										<aside id="archives-2" class="widget widget_archive"><h3 class="widget-title">Toi aussi, trouve un article obsolète sur notre blog</h3>		<ul>
+			<li><a href='http://sametmax.com/2019/09/'>September 2019</a>&nbsp;(1)</li>
+	<li><a href='http://sametmax.com/2019/06/'>June 2019</a>&nbsp;(1)</li>
+	<li><a href='http://sametmax.com/2019/02/'>February 2019</a>&nbsp;(1)</li>
+	<li><a href='http://sametmax.com/2019/01/'>January 2019</a>&nbsp;(3)</li>
+	<li><a href='http://sametmax.com/2018/12/'>December 2018</a>&nbsp;(1)</li>
+	<li><a href='http://sametmax.com/2018/09/'>September 2018</a>&nbsp;(2)</li>
+	<li><a href='http://sametmax.com/2018/08/'>August 2018</a>&nbsp;(1)</li>
+	<li><a href='http://sametmax.com/2018/07/'>July 2018</a>&nbsp;(3)</li>
+	<li><a href='http://sametmax.com/2018/06/'>June 2018</a>&nbsp;(4)</li>
+	<li><a href='http://sametmax.com/2018/05/'>May 2018</a>&nbsp;(2)</li>
+	<li><a href='http://sametmax.com/2018/03/'>March 2018</a>&nbsp;(2)</li>
+	<li><a href='http://sametmax.com/2018/02/'>February 2018</a>&nbsp;(1)</li>
+	<li><a href='http://sametmax.com/2017/12/'>December 2017</a>&nbsp;(4)</li>
+	<li><a href='http://sametmax.com/2017/11/'>November 2017</a>&nbsp;(5)</li>
+	<li><a href='http://sametmax.com/2017/10/'>October 2017</a>&nbsp;(2)</li>
+	<li><a href='http://sametmax.com/2017/09/'>September 2017</a>&nbsp;(1)</li>
+	<li><a href='http://sametmax.com/2017/07/'>July 2017</a>&nbsp;(5)</li>
+	<li><a href='http://sametmax.com/2017/06/'>June 2017</a>&nbsp;(3)</li>
+	<li><a href='http://sametmax.com/2017/05/'>May 2017</a>&nbsp;(3)</li>
+	<li><a href='http://sametmax.com/2017/04/'>April 2017</a>&nbsp;(2)</li>
+	<li><a href='http://sametmax.com/2017/03/'>March 2017</a>&nbsp;(3)</li>
+	<li><a href='http://sametmax.com/2017/02/'>February 2017</a>&nbsp;(5)</li>
+	<li><a href='http://sametmax.com/2017/01/'>January 2017</a>&nbsp;(5)</li>
+	<li><a href='http://sametmax.com/2016/10/'>October 2016</a>&nbsp;(2)</li>
+	<li><a href='http://sametmax.com/2016/09/'>September 2016</a>&nbsp;(5)</li>
+	<li><a href='http://sametmax.com/2016/08/'>August 2016</a>&nbsp;(2)</li>
+	<li><a href='http://sametmax.com/2016/03/'>March 2016</a>&nbsp;(8)</li>
+	<li><a href='http://sametmax.com/2016/02/'>February 2016</a>&nbsp;(9)</li>
+	<li><a href='http://sametmax.com/2016/01/'>January 2016</a>&nbsp;(16)</li>
+	<li><a href='http://sametmax.com/2015/12/'>December 2015</a>&nbsp;(6)</li>
+	<li><a href='http://sametmax.com/2015/11/'>November 2015</a>&nbsp;(7)</li>
+	<li><a href='http://sametmax.com/2015/10/'>October 2015</a>&nbsp;(2)</li>
+	<li><a href='http://sametmax.com/2015/09/'>September 2015</a>&nbsp;(6)</li>
+	<li><a href='http://sametmax.com/2015/08/'>August 2015</a>&nbsp;(10)</li>
+	<li><a href='http://sametmax.com/2015/07/'>July 2015</a>&nbsp;(18)</li>
+	<li><a href='http://sametmax.com/2015/06/'>June 2015</a>&nbsp;(13)</li>
+	<li><a href='http://sametmax.com/2015/05/'>May 2015</a>&nbsp;(12)</li>
+	<li><a href='http://sametmax.com/2015/04/'>April 2015</a>&nbsp;(13)</li>
+	<li><a href='http://sametmax.com/2015/03/'>March 2015</a>&nbsp;(8)</li>
+	<li><a href='http://sametmax.com/2015/02/'>February 2015</a>&nbsp;(4)</li>
+	<li><a href='http://sametmax.com/2015/01/'>January 2015</a>&nbsp;(21)</li>
+	<li><a href='http://sametmax.com/2014/12/'>December 2014</a>&nbsp;(24)</li>
+	<li><a href='http://sametmax.com/2014/11/'>November 2014</a>&nbsp;(6)</li>
+	<li><a href='http://sametmax.com/2014/10/'>October 2014</a>&nbsp;(18)</li>
+	<li><a href='http://sametmax.com/2014/09/'>September 2014</a>&nbsp;(10)</li>
+	<li><a href='http://sametmax.com/2014/08/'>August 2014</a>&nbsp;(5)</li>
+	<li><a href='http://sametmax.com/2014/07/'>July 2014</a>&nbsp;(11)</li>
+	<li><a href='http://sametmax.com/2014/06/'>June 2014</a>&nbsp;(25)</li>
+	<li><a href='http://sametmax.com/2014/05/'>May 2014</a>&nbsp;(14)</li>
+	<li><a href='http://sametmax.com/2014/04/'>April 2014</a>&nbsp;(10)</li>
+	<li><a href='http://sametmax.com/2014/03/'>March 2014</a>&nbsp;(23)</li>
+	<li><a href='http://sametmax.com/2014/02/'>February 2014</a>&nbsp;(27)</li>
+	<li><a href='http://sametmax.com/2014/01/'>January 2014</a>&nbsp;(17)</li>
+	<li><a href='http://sametmax.com/2013/12/'>December 2013</a>&nbsp;(27)</li>
+	<li><a href='http://sametmax.com/2013/11/'>November 2013</a>&nbsp;(25)</li>
+	<li><a href='http://sametmax.com/2013/10/'>October 2013</a>&nbsp;(27)</li>
+	<li><a href='http://sametmax.com/2013/09/'>September 2013</a>&nbsp;(1)</li>
+	<li><a href='http://sametmax.com/2013/08/'>August 2013</a>&nbsp;(31)</li>
+	<li><a href='http://sametmax.com/2013/07/'>July 2013</a>&nbsp;(32)</li>
+	<li><a href='http://sametmax.com/2013/06/'>June 2013</a>&nbsp;(24)</li>
+	<li><a href='http://sametmax.com/2013/05/'>May 2013</a>&nbsp;(30)</li>
+	<li><a href='http://sametmax.com/2013/04/'>April 2013</a>&nbsp;(31)</li>
+	<li><a href='http://sametmax.com/2013/03/'>March 2013</a>&nbsp;(33)</li>
+	<li><a href='http://sametmax.com/2013/02/'>February 2013</a>&nbsp;(29)</li>
+	<li><a href='http://sametmax.com/2013/01/'>January 2013</a>&nbsp;(34)</li>
+	<li><a href='http://sametmax.com/2012/12/'>December 2012</a>&nbsp;(32)</li>
+	<li><a href='http://sametmax.com/2012/11/'>November 2012</a>&nbsp;(36)</li>
+	<li><a href='http://sametmax.com/2012/10/'>October 2012</a>&nbsp;(35)</li>
+	<li><a href='http://sametmax.com/2012/09/'>September 2012</a>&nbsp;(36)</li>
+	<li><a href='http://sametmax.com/2012/08/'>August 2012</a>&nbsp;(37)</li>
+	<li><a href='http://sametmax.com/2012/07/'>July 2012</a>&nbsp;(33)</li>
+	<li><a href='http://sametmax.com/2012/06/'>June 2012</a>&nbsp;(24)</li>
+	<li><a href='http://sametmax.com/2012/05/'>May 2012</a>&nbsp;(31)</li>
+	<li><a href='http://sametmax.com/2012/04/'>April 2012</a>&nbsp;(20)</li>
+	<li><a href='http://sametmax.com/2012/03/'>March 2012</a>&nbsp;(10)</li>
+	<li><a href='http://sametmax.com/2012/02/'>February 2012</a>&nbsp;(14)</li>
+		</ul>
+		</aside>
+																							</div><!-- .{$key}_widget_class -->
+
+																	</div><!-- .row.widget-area -->
+				</div><!--.footer-widgets -->
+				    				 <div class="colophon">
+			 	<div class="container">
+			 		<div class="row-fluid">
+					    <div class="span4 social-block pull-left"><span class="tc-footer-social-links-wrapper" ><a class="social-icon icon-feed" href="http://sametmax.com/feed/rss/" title="Subscribe to my rss feed"  ></a></span></div><div class="span4 credits"><p>&middot; &copy; 2020 <a href="http://sametmax.com" title="Sam &amp; Max" rel="bookmark">Sam &amp; Max</a> &middot; Designed by <a href="http://themesandco.com/">Themes &amp; Co</a> &middot;</p></div><div class="span4 backtop"><p class="pull-right"><a class="back-to-top" href="#">Back to top</a></p></div>	      			</div><!-- .row-fluid -->
+	      		</div><!-- .container -->
+	      	</div><!-- .colophon -->
+	    			</footer>
+			<div style="display:none">
+	<div class="grofile-hash-map-bf9ecde8f5e286de6ce5c80206cf9dd6">
+	</div>
+	</div>
+
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"http:\/\/sametmax.com\/vive-setup-cfg-et-mort-a-pyproject-toml\/":25060};
+	</script>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+			<div id="fb-root"></div>
+			<script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&appId=249643311490&version=v2.3'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));</script>
+			<script>
+			jQuery( document.body ).on( 'post-load', function() {
+				if ( 'undefined' !== typeof FB ) {
+					FB.XFBML.parse();
+				}
+			} );
+			</script>
+						<script>
+			function renderGooglePlus1() {
+				if ( 'undefined' === typeof gapi ) {
+					return;
+				}
+
+				jQuery( '.g-plus' ).each(function() {
+					var $button = jQuery( this );
+
+					if ( ! $button.data( 'gplus-rendered' ) ) {
+						gapi.plusone.render( this, {
+							href: $button.attr( 'data-href' ),
+							size: $button.attr( 'data-size' ),
+							annotation: $button.attr( 'data-annotation' )
+						});
+
+						$button.data( 'gplus-rendered', true );
+					}
+				});
+			}
+
+			(function() {
+				var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+				po.src = 'https://apis.google.com/js/platform.js';
+				po.innerHTML = '{"parsetags": "explicit"}';
+				po.onload = renderGooglePlus1;
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+			})();
+
+			jQuery( document.body ).on( 'post-load', renderGooglePlus1 );
+			</script>
+				<div id="sharing_email" style="display: none;">
+		<form action="/vive-setup-cfg-et-mort-a-pyproject-toml/" method="post">
+			<label for="target_email">Send to Email Address</label>
+			<input type="email" name="target_email" id="target_email" value="" />
+
+			
+				<label for="source_name">Your Name</label>
+				<input type="text" name="source_name" id="source_name" value="" />
+
+				<label for="source_email">Your Email Address</label>
+				<input type="email" name="source_email" id="source_email" value="" />
+
+						<input type="text" id="jetpack-source_f_name" name="source_f_name" class="input" value="" size="25" autocomplete="off" title="This field is for validation and should not be changed" />
+			
+			<img style="float: right; display: none" class="loading" src="http://sametmax.com/wp-content/plugins/jetpack/modules/sharedaddy/images/loading.gif" alt="loading" width="16" height="16" />
+			<input type="submit" value="Send Email" class="sharing_send" />
+			<a rel="nofollow" href="#cancel" class="sharing_cancel">Cancel</a>
+
+			<div class="errors errors-1" style="display: none;">
+				Post was not sent - check your email addresses!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Email check failed, please try again			</div>
+
+			<div class="errors errors-3" style="display: none;">
+				Sorry, your blog cannot share posts by email.			</div>
+		</form>
+	</div>
+					<script type="text/javascript">
+				// Pinterest shared resources
+				var s = document.createElement("script");
+				s.type = "text/javascript";
+				s.async = true;
+				s.setAttribute('data-pin-hover', true);				s.src = window.location.protocol + "//assets.pinterest.com/js/pinit.js";
+				var x = document.getElementsByTagName("script")[0];
+				x.parentNode.insertBefore(s, x);
+				// if 'Pin it' button has 'counts' make container wider
+				jQuery(window).load( function(){ jQuery( 'li.share-pinterest a span:visible' ).closest( '.share-pinterest' ).width( '80px' ); } );
+			</script>
+		<script type="text/javascript" src="https://platform.tumblr.com/v1/share.js"></script>		<script>
+		// Don't use Pocket's default JS as it we need to force init new Pocket share buttons loaded via JS.
+		function jetpack_sharing_pocket_init() {
+			jQuery.getScript( 'https://widgets.getpocket.com/v1/j/btn.js?v=1' );
+		}
+		jQuery( document ).ready( jetpack_sharing_pocket_init );
+		jQuery( document.body ).on( 'post-load', jetpack_sharing_pocket_init );
+		</script>
+		<script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"http:\/\/sametmax.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"Please verify that you are not a robot."}}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://sametmax.com/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.0.2'></script>
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=202035'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var pollsL10n = {"ajax_url":"http:\/\/sametmax.com\/wp-admin\/admin-ajax.php","text_wait":"Your last request is still being processed. Please wait a while ...","text_valid":"Please choose a valid poll answer.","text_multiple":"Maximum number of choices allowed: ","show_loading":"1","show_fading":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://sametmax.com/wp-content/plugins/wp-polls/polls-js.js?ver=2.73.8'></script>
+<script type='text/javascript' src='http://sametmax.com/wp-content/plugins/wp-syntax/js/wp-syntax.js?ver=1.1'></script>
+<script type='text/javascript' src='https://secure.gravatar.com/js/gprofiles.js?ver=2020Augaa'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://sametmax.com/wp-content/plugins/jetpack/modules/wpgroho.js?ver=4.9.7'></script>
+<script type='text/javascript' src='http://sametmax.com/wp-includes/js/comment-reply.min.js?ver=4.9.7'></script>
+<script type='text/javascript' src='http://sametmax.com/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://sametmax.com/wp-content/themes/customizr/inc/assets/js/modernizr.min.js?ver=3.2.10'></script>
+<script type='text/javascript' src='http://sametmax.com/wp-content/themes/customizr/inc/assets/js/retina.min.js?ver=3.2.10'></script>
+<script type='text/javascript' src='http://sametmax.com/wp-includes/js/wp-embed.min.js?ver=4.9.7'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://sametmax.com/wp-content/plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=6.3.2'></script>
+<script type='text/javascript'>
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-facebook', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+</script>
+<script type='text/javascript' src='https://stats.wp.com/e-202035.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:6.3.2',blog:'32490438',post:'25060',tz:'0',srv:'sametmax.com'} ]);
+	_stq.push([ 'clickTrackerInit', '32490438', '25060' ]);
+</script>
+<div class="tc-btt-wrapper"><i class="btt-arrow" style="color:#394143"></i></div>	</body>
+	</html>
