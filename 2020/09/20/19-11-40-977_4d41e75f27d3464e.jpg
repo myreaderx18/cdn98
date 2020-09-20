@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<!--[if !IE]>
+<html class="no-js non-ie" lang="en-US"> <![endif]-->
+<!--[if IE 7 ]>
+<html class="no-js ie7" lang="en-US"> <![endif]-->
+<!--[if IE 8 ]>
+<html class="no-js ie8" lang="en-US"> <![endif]-->
+<!--[if IE 9 ]>
+<html class="no-js ie9" lang="en-US"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ahrefs-site-verification" content="444ed4eb253b2e175037a391096cdabd0d7988515bc3666dafd8b616dd27dfb5">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://sematext.com/xmlrpc.php">
+<link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://sematext.com/wp-content/themes/sematext-next/inc/images/apple-touch-icon-precomposed.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://sematext.com/wp-content/themes/sematext-next/inc/images/apple-touch-icon.png">
+
+    <script type="text/javascript">
+        (function(e,r,n,t,s){var a=[];e[s]=function(){a.push(arguments)};e[s].queue=a;var o=[];var i=[];var c=true;var p=void 0;if(window.PerformanceObserver&&window.PerformanceObserver.supportedEntryTypes&&(  PerformanceObserver.supportedEntryTypes.indexOf("longtask")>=0||PerformanceObserver.supportedEntryTypes.indexOf("element")>=0)){p=new PerformanceObserver(function(e){e.getEntries().forEach(function(e){  switch(e.entryType){case"element":i.push(e);break;case"longtask":o.push(e);break;default:break}})});p.observe({entryTypes:["longtask","element"]})}e[s+"lt"]={longTasks:o,timingElements:i,inPageLoad:c,observer:p};if(t){var u=r.createElement(n);u.async=1;u.src=t;var f=r.getElementsByTagName(n)[0];f.parentNode.insertBefore(u,f)}})
+        (window,document,"script","//cdn.sematext.com/rum.js","strumTest");
+
+        (function(e,r,n,t,s){var a=[];e[s]=function(){a.push(arguments)};e[s].queue=a;var o=[];var i=[];var c=true;var p=void 0;if(window.PerformanceObserver&&window.PerformanceObserver.supportedEntryTypes&&(  PerformanceObserver.supportedEntryTypes.indexOf("longtask")>=0||PerformanceObserver.supportedEntryTypes.indexOf("element")>=0)){p=new PerformanceObserver(function(e){e.getEntries().forEach(function(e){  switch(e.entryType){case"element":i.push(e);break;case"longtask":o.push(e);break;default:break}})});p.observe({entryTypes:["longtask","element"]})}e[s+"lt"]={longTasks:o,timingElements:i,inPageLoad:c,observer:p};if(t){var u=r.createElement(n);u.async=1;u.src=t;var f=r.getElementsByTagName(n)[0];f.parentNode.insertBefore(u,f)}})
+        (window,document,"script",null,"strumUS");
+
+        window.STRUM_CONTEXTS = ['strumTest', 'strumUS'];
+        var receivers = [
+            'https://rum-receiver.apps.test.sematext.com',
+            'https://rum-receiver.sematext.com'
+        ];
+        strumTest('config', {
+            token: 'a49c4cca-a44d-4c11-9401-d5c32cfd556a',
+            receiverUrl: receivers[0],
+            ignoreOrigins: receivers,
+        });
+        strumUS('config', {
+            token: '3585e63f-9c1c-459c-a207-709923d61f53',
+            receiverUrl: receivers[1],
+            ignoreOrigins: receivers,
+        });
+    </script>
+
+
+	<!-- This site is optimized with the Yoast SEO plugin v14.0.4 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Log Analysis Tutorial: What It Is, Why &amp; When DevOps Use It - Sematext</title>
+	<meta name="description" content="Learn what is log analysis, why do you need it, and how to do it. Find your use case and follow best practices to reap the full benefits of any type of logs!" />
+	<meta name="robots" content="index, follow" />
+	<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+	<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+	<link rel="canonical" href="https://sematext.com/blog/log-analysis/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Log Analysis Tutorial: What It Is, Why &amp; When DevOps Use It - Sematext" />
+	<meta property="og:description" content="Learn what is log analysis, why do you need it, and how to do it. Find your use case and follow best practices to reap the full benefits of any type of logs!" />
+	<meta property="og:url" content="https://sematext.com/blog/log-analysis/" />
+	<meta property="og:site_name" content="Sematext" />
+	<meta property="article:publisher" content="https://www.facebook.com/Sematext/" />
+	<meta property="article:published_time" content="2020-09-18T12:59:59+00:00" />
+	<meta property="article:modified_time" content="2020-09-18T14:01:06+00:00" />
+	<meta property="og:image" content="https://sematext.com/wp-content/uploads/2019/09/Log-analysis-FI.jpg" />
+	<meta property="og:image:width" content="1500" />
+	<meta property="og:image:height" content="820" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@sematext" />
+	<meta name="twitter:site" content="@sematext" />
+	<!-- / Yoast SEO plugin. -->
+
+
+<!-- Jetpack Site Verification Tags -->
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel='dns-prefetch' href='//rsms.me' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Sematext &raquo; Feed" href="https://sematext.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Sematext &raquo; Comments Feed" href="https://sematext.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Sematext &raquo; Log Analysis: A Complete Guide Covering from What it is, Use Cases &#038; Best Practices You Need to Know About Comments Feed" href="https://sematext.com/blog/log-analysis/feed/" />
+<link rel='stylesheet' id='selection-sharer-css'  href='https://sematext.com/wp-content/plugins/selection-sharer/css/selection-sharer.css?ver=0.1' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://sematext.com/wp-includes/css/dist/block-library/style.min.css?ver=5.4.2' type='text/css' media='all' />
+<style id='wp-block-library-inline-css' type='text/css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<link rel='stylesheet' id='responsive-lightbox-swipebox-css'  href='https://sematext.com/wp-content/plugins/responsive-lightbox/assets/swipebox/swipebox.min.css?ver=2.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='wpfront-notification-bar-css'  href='https://sematext.com/wp-content/plugins/wpfront-notification-bar/css/wpfront-notification-bar.css?ver=1.7.1' type='text/css' media='all' />
+<link rel='stylesheet' id='inter-ui-font-css'  href='https://rsms.me/inter/inter-ui.css?ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='sparkling-bootstrap-css'  href='https://sematext.com/wp-content/themes/sparkling/inc/css/bootstrap.css?ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='sparkling-icons-css'  href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css?ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='tablepress-default-css'  href='https://sematext.com/wp-content/plugins/tablepress/css/default.min.css?ver=1.11' type='text/css' media='all' />
+<link rel='stylesheet' id='parent-style-css'  href='https://sematext.com/wp-content/themes/sparkling/style.css?ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='child-style-css'  href='https://sematext.com/wp-content/themes/sematext-next/style.css?ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='gamma-common-style-css'  href='https://sematext.com/wp-content/themes/sematext-next/inc/css/gamma-common.css?ver=5.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='social-logos-css'  href='https://sematext.com/wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=1' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='https://sematext.com/wp-content/plugins/jetpack/css/jetpack.css?ver=8.5' type='text/css' media='all' />
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var related_posts_js_options = {"post_heading":"h4"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://sematext.com/wp-content/plugins/jetpack/_inc/build/related-posts/related-posts.min.js?ver=20191011'></script>
+<script type='text/javascript' src='https://sematext.com/wp-content/plugins/responsive-lightbox/assets/swipebox/jquery.swipebox.min.js?ver=2.2.2'></script>
+<script type='text/javascript' src='https://sematext.com/wp-content/plugins/responsive-lightbox/assets/infinitescroll/infinite-scroll.pkgd.min.js?ver=5.4.2'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var rlArgs = {"script":"swipebox","selector":"lightbox","customEvents":"","activeGalleries":"1","animation":"1","hideCloseButtonOnMobile":"0","removeBarsOnMobile":"0","hideBars":"1","hideBarsDelay":"5000","videoMaxWidth":"1080","useSVG":"1","loopAtEnd":"0","woocommerce_gallery":"0","ajaxurl":"https:\/\/sematext.com\/wp-admin\/admin-ajax.php","nonce":"833d0a6dcf"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://sematext.com/wp-content/plugins/responsive-lightbox/js/front.js?ver=2.2.2'></script>
+<script type='text/javascript' src='https://sematext.com/wp-content/plugins/wpfront-notification-bar/jquery-plugins/jquery.c.js?ver=1.4.0'></script>
+<script type='text/javascript' src='https://sematext.com/wp-content/plugins/wpfront-notification-bar/js/wpfront-notification-bar.js?ver=1.7.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpp_params = {"sampling_active":"0","sampling_rate":"100","ajax_url":"https:\/\/sematext.com\/wp-json\/wordpress-popular-posts\/v1\/popular-posts","ID":"48226","token":"947c3a74ac","debug":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://sematext.com/wp-content/plugins/wordpress-popular-posts/assets/js/wpp-5.0.0.min.js?ver=5.1.0'></script>
+<script type='text/javascript' src='https://sematext.com/wp-content/themes/sematext-next/inc/js/intersection-observer.min.js?ver=5.4.2'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js?ver=5.4.2'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js?ver=5.4.2'></script>
+<script type='text/javascript' src='https://sematext.com/wp-content/themes/sparkling/inc/js/functions.min.js?ver=5.4.2'></script>
+<link rel='https://api.w.org/' href='https://sematext.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://sematext.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://sematext.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.4.2" />
+<link rel='shortlink' href='https://wp.me/p7iMwk-cxQ' />
+<link rel="alternate" type="application/json+oembed" href="https://sematext.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsematext.com%2Fblog%2Flog-analysis%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://sematext.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsematext.com%2Fblog%2Flog-analysis%2F&#038;format=xml" />
+                                   
+
+<!-- This site is optimized with the Schema plugin v1.7.8.1 - https://schema.press -->
+<script type="application/ld+json">{"@context":"http:\/\/schema.org\/","@type":"TechArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/sematext.com\/blog\/log-analysis\/"},"url":"https:\/\/sematext.com\/blog\/log-analysis\/","headline":"Log Analysis: A Complete Guide Covering from What it is, Use Cases & Best Practices You Need to Know...","datePublished":"2020-09-18T08:59:59-04:00","dateModified":"2020-09-18T10:01:06-04:00","publisher":{"@type":"Organization","@id":"https:\/\/sematext.com\/#organization","name":"Sematext","logo":{"@type":"ImageObject","url":"https:\/\/sematext.com\/wp-content\/uploads\/2018\/07\/sematext-logo.jpg","width":600,"height":60}},"image":{"@type":"ImageObject","url":"https:\/\/sematext.com\/wp-content\/uploads\/2019\/09\/Log-analysis-FI.jpg","width":1500,"height":820},"articleSection":"Logging","description":"Logs are one of the most valuable assets when it comes to IT system management and monitoring. As they record every action that took place on your network, logs provide the insight you need to spot issues that might impact performance, compliance, and security. That’s why log management should be","author":{"@type":"Person","name":"sematext","url":"https:\/\/sematext.com\/blog\/author\/sematext\/","image":{"@type":"ImageObject","url":"https:\/\/secure.gravatar.com\/avatar\/18ddfa48f19355af2afd971dce4c899c?s=96&d=mm&r=g","height":96,"width":96},"sameAs":["https:\/\/sematext.com\/","https:\/\/twitter.com\/sematext"]}}</script>
+
+
+<link rel='dns-prefetch' href='//v0.wordpress.com'/>
+<link rel='dns-prefetch' href='//jetpack.wordpress.com'/>
+<link rel='dns-prefetch' href='//s0.wp.com'/>
+<link rel='dns-prefetch' href='//s1.wp.com'/>
+<link rel='dns-prefetch' href='//s2.wp.com'/>
+<link rel='dns-prefetch' href='//public-api.wordpress.com'/>
+<link rel='dns-prefetch' href='//0.gravatar.com'/>
+<link rel='dns-prefetch' href='//1.gravatar.com'/>
+<link rel='dns-prefetch' href='//2.gravatar.com'/>
+<style type='text/css'>img#wpstats{display:none}</style><link rel="shortcut icon" type="image/png" href="https://sematext.com/wp-content/themes/sematext-next/inc/images/favicon.png" />
+
+<!-- This site is optimized with the Schema plugin v1.7.8.1 - https://schema.press -->
+<script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+                "@id": "https://sematext.com",
+                "name": "Home"
+            }
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+                "@id": "https://sematext.com/blog/",
+                "name": "Sematext Blog"
+            }
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+                "@id": "https://sematext.com/blog/log-analysis/",
+                "name": "Log Analysis: A Complete Guide Covering from What it is, Use Cases &#038; Best Practices You Need to Know About",
+                "image": "https://sematext.com/wp-content/uploads/2019/09/Log-analysis-FI.jpg"
+            }
+        }
+    ]
+}</script>
+
+			<style type="text/css" id="wp-custom-css">
+				.gdpr.gdpr-privacy-bar .gdpr-wrapper, .gdpr.gdpr-reconsent-bar .gdpr-wrapper {
+    max-width: 70%;
+    margin: 0 15%;
+}
+.gdpr.gdpr-privacy-bar .gdpr-wrapper .gdpr-content p, .gdpr.gdpr-reconsent-bar .gdpr-wrapper .gdpr-content p {
+    font-size: 12px;
+}
+.gdpr.gdpr-privacy-bar .gdpr-agreement, .gdpr.gdpr-reconsent-bar .gdpr-agreement {
+    background: #022638;
+}
+.gdpr.gdpr-privacy-bar .gdpr-preferences, .gdpr.gdpr-reconsent-bar .gdpr-preferences {
+    font-size: 12px;
+}
+.gdpr.gdpr-privacy-bar, .gdpr.gdpr-reconsent-bar {
+    background: rgb(20, 54, 71);
+}
+.gdpr.gdpr-privacy-bar .gdpr-wrapper, .gdpr.gdpr-reconsent-bar .gdpr-wrapper {
+    padding: 20px 10px;
+}
+
+#menu-item-7208 a:after {
+ font-family: fontawesome;
+ content: '\f0f2';
+ padding-left: 6px;
+}			</style>
+		
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-K47WKMR');
+    </script>
+    <!-- End Google Tag Manager -->
+
+<!-- Google Structured Data - Social Profile  https://developers.google.com/search/docs/data-types/social-profile-->
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "Sematext Group",
+  "url": "https://sematext.com",
+  "sameAs": [
+    "https://twitter.com/sematext",
+    "https://www.facebook.com/Sematext/",
+    "https://github.com/sematext",
+    "https://plus.google.com/+SematextGroup",
+    "https://www.linkedin.com/company/294493/"
+  ]
+}
+</script>
+
+
+    <!-- Hotjar Tracking Code for sematext.com -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:1559295,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+
+</head>
+<body class="post-template-default single single-post postid-48226 single-format-standard group-blog">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K47WKMR"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+<div id="page" class="hfeed site">
+
+    <header id="masthead" class="site-header" role="banner">
+
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+			<div class="container">
+				<div class="row">
+					<div class="site-navigation-inner">
+						<div class="navbar-header">
+							<button type="button" class="btn navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+                            <div id="logo">
+								<a href="https://sematext.com/">
+                                    <img src="https://sematext.com/wp-content/themes/sematext-next/inc/images/sematext-logo.svg" alt="Sematext"/>
+                                </a>
+							</div>
+						</div>
+						<div class="collapse navbar-collapse navbar-ex1-collapse"><ul id="menu-main-navigation" class="nav navbar-nav"><li id="menu-item-7185" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7185 dropdown"><button title="Products" href="#" data-toggle="dropdown" class="dropdown-toggle">Products <span class="caret"></span></button>
+<ul role="menu" class=" dropdown-menu">
+	<li id="menu-item-39760" class="menu-item menu-item-type-yawp_wim menu-item-object-yawp_wim menu-item-39760">				<div class="yawp_wim_wrap">
+					<div class="widget-area">
+						<div id="text-17" class="yawp_wim_widget widget_text">			<div class="textwidget"><div class="mm-v5">
+<div class="mm-v5-products">
+<ul class="mm-ul-prod-cloud" role="menu">
+<li id="mm-cloud">
+<div class="mm-prod-txt"><a title="Sematext Cloud" href="/cloud/"><strong>Sematext Cloud</strong><br />
+All-in-one monitoring solution: Metrics, Logs, User Analysis &amp; Tracing, finally together.</a></div>
+</li>
+</ul>
+<ul class="mm-ul-aux" role="menu">
+<li id="mm-updates"><a title="Product Updates" href="/product-updates/">Product Updates</a></li>
+<li id="mm-docs"><a title="Sematext Docs" href="https://sematext.com/docs" target="_blank" rel="noopener noreferrer">Documentation</a></li>
+<li id="mm-pricing"><a title="Plans and Pricing" href="/pricing/">Plans &amp; Pricing</a></li>
+</ul>
+<ul class="mm-ul-prods" role="menu">
+<li id="mm-logs">
+<div class="mm-prod-txt"><a title="Logsene" href="/logsene/"><strong>Logs</strong><br />
+Hassle-free Log Management and analytics</a></div>
+<div class="mm-prod-tag"><a title="Logsene Pricing" href="/pricing/#logsene"><mark>Plans &amp; Prices</mark></a></div>
+</li>
+<li id="mm-spm">
+<div class="mm-prod-txt"><a title="Infrastructure Monitoring" href="/spm/"><strong>Infrastructure Monitoring</strong><br />
+Map and monitor your whole infrastructure in real-time</a></div>
+<div class="mm-prod-tag"><a title="Infrastructure Monitoring Pricing" href="/pricing/#spm"><mark>Plans &amp; Prices</mark></a></div>
+</li>
+<li id="mm-experience">
+<div class="mm-prod-txt"><a title="Real User Monitoring" href="/experience/"><strong>Experience</strong><br />
+Improve your customers&#8217; digital experience with Real User Monitoring</a></div>
+<div class="mm-prod-tag"><a title="Sematext Experience Pricing" href="/pricing/#experience"><mark>Plans &amp; Prices</mark></a></div>
+</li>
+<li id="mm-tracing">
+<div class="mm-prod-txt"><a title="APM / Tracing" href="/tracing/"><strong>Tracing</strong><br />
+Optimize end-to-end application performance</a></div>
+<div class="mm-prod-tag"><mark>coming soon</mark></div>
+</li>
+<li id="mm-synthetic">
+<div class="mm-prod-txt"><a title="Synthetic Monitoring" href="/synthetic-monitoring/"><strong>Synthetics</strong><br />
+Monitor performance and availability of your site and APIs</a></div>
+<div class="mm-prod-tag"><a title="Sematext Synthetics Pricing" href="/pricing/#synthetics"><mark>Plans &amp; Prices</mark></a></div>
+</li>
+</ul>
+<ul class="mm-ul-prod-enterprise" role="menu">
+<li id="mm-enterprise">
+<div class="mm-prod-txt"><a title="Sematext Enterprise" href="/enterprise/"><strong>Sematext Enterprise</strong><br />
+Run Sematext Cloud on your infrastructure</a></div>
+</li>
+</ul>
+</div>
+<div class="mm-v5-capabilities">
+<h3>Main Capabilities</h3>
+<ul class="mm-ul-list" role="menu">
+<li><a title="APM" href="/apm/">Application Performance Monitoring</a></li>
+<li><a title="Server Monitoring" href="/server-monitoring/">Server Monitoring</a></li>
+<li><a title="Docker Logs and Metrics" href="/docker/">Docker Logs and Metrics</a></li>
+<li><a title="Kubernetes Logs and Metrics" href="/kubernetes/">Kubernetes Logs and Metrics</a></li>
+<li><a title="Process Monitoring" href="/process-monitoring/">Process Monitoring</a></li>
+<li><a title="Database Monitoring" href="/database-monitoring/">Database Monitoring</a></li>
+<li><a title="Network Monitoring" href="/network-monitoring/">Network Monitoring</a></li>
+<li><a title="Java Monitoring" href="/java-monitoring/">JVM Monitoring</a></li>
+<li><a title="Metrics and Logs" href="/metrics-and-logs/">Metrics and Logs</a></li>
+<li><a title="Inventory Monitoring" href="/inventory-monitoring/">Inventory Monitoring</a></li>
+<li><a title="Alerts" href="/alerts/">Alerts</a></li>
+<li><a title="Events" href="/events/">Events</a></li>
+<li><a title="Integrations" href="/integrations/">Integrations</a></li>
+<li><a title="API" href="/api/">API</a></li>
+</ul>
+</div>
+</div>
+</div>
+		</div>					</div>
+				</div>
+				</li>
+	<li id="menu-item-7189" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7189"><a title="SPM &#8211; Infrastructure Pefrormance Monitoring" href="https://sematext.com/spm/"><span class="glyphicon SPM &#8211; Infrastructure Pefrormance Monitoring"></span>&nbsp;Infrastructure Monitoring</a></li>
+	<li id="menu-item-7187" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7187"><a title="Logsene Log Management" href="https://sematext.com/logsene/">Logsene Log Management</a></li>
+	<li id="menu-item-9168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9168"><a title="Docker Agent" href="https://sematext.com/docker/">Docker Agent</a></li>
+	<li id="menu-item-36105" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36105"><a title="Kubernetes Agent" href="https://sematext.com/kubernetes/">Kubernetes Agent</a></li>
+	<li id="menu-item-39771" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-39771"><a title="Sematext Cloud" href="https://sematext.com/cloud/">Sematext Cloud</a></li>
+	<li id="menu-item-9350" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9350"><a title="Logagent" href="https://sematext.com/logagent/">Logagent</a></li>
+</ul>
+</li>
+<li id="menu-item-48437" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48437"><a title="Pricing" href="https://sematext.com/pricing/">Pricing</a></li>
+<li id="menu-item-41576" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-41576 dropdown"><button title="Services" href="#" data-toggle="dropdown" class="dropdown-toggle">Services <span class="caret"></span></button>
+<ul role="menu" class=" dropdown-menu">
+	<li id="menu-item-7190" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7190 dropdown"><a title="Consulting" href="#">Consulting</a>
+	<ul role="menu" class=" dropdown-menu">
+		<li id="menu-item-7191" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7191"><a title="Consulting Overview" href="https://sematext.com/consulting/">Consulting Overview</a></li>
+		<li id="menu-item-7194" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7194"><a title="Solr Consulting" href="https://sematext.com/consulting/solr/">Solr Consulting</a></li>
+		<li id="menu-item-7192" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7192"><a title="Elasticsearch Consulting" href="https://sematext.com/consulting/elasticsearch/">Elasticsearch Consulting</a></li>
+		<li id="menu-item-7193" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7193"><a title="Logging Consulting" href="https://sematext.com/consulting/logging/">Logging Consulting</a></li>
+	</ul>
+</li>
+	<li id="menu-item-7196" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7196 dropdown"><a title="Support" href="#">Support</a>
+	<ul role="menu" class=" dropdown-menu">
+		<li id="menu-item-7197" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7197"><a title="Support Overview" href="https://sematext.com/support/">Support Overview</a></li>
+		<li id="menu-item-7199" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7199"><a title="Solr Support" href="https://sematext.com/support/solr-production-support/">Solr Support</a></li>
+		<li id="menu-item-7198" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7198"><a title="Elasticsearch Support" href="https://sematext.com/support/elasticsearch-production-support/">Elasticsearch Support</a></li>
+	</ul>
+</li>
+	<li id="menu-item-7200" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7200 dropdown"><a title="Training" href="#">Training</a>
+	<ul role="menu" class=" dropdown-menu">
+		<li id="menu-item-7201" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7201"><a title="Training Overview" href="https://sematext.com/training/">Training Overview</a></li>
+		<li id="menu-item-7203" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7203"><a title="Solr Training" href="https://sematext.com/training/solr/">Solr Training</a></li>
+		<li id="menu-item-7202" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7202"><a title="Elasticsearch Training" href="https://sematext.com/training/elasticsearch/">Elasticsearch Training</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-7204" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7204 dropdown"><button title="Resources" href="https://sematext.com/resources/" data-toggle="dropdown" class="dropdown-toggle">Resources <span class="caret"></span></button>
+<ul role="menu" class=" dropdown-menu">
+	<li id="menu-item-45056" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-45056 dropdown"><a title="How to" href="#">How to</a>
+	<ul role="menu" class=" dropdown-menu">
+		<li id="menu-item-45059" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45059"><a title="eBooks" href="https://sematext.com/resources/ebooks/">eBooks</a></li>
+		<li id="menu-item-45060" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45060"><a title="Cheat Sheets" href="https://sematext.com/resources/cheat-sheets/">Cheat Sheets</a></li>
+		<li id="menu-item-45061" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45061"><a title="Product Videos" href="https://sematext.com/resources/product-videos/">Product Videos</a></li>
+		<li id="menu-item-45062" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45062"><a title="Slide Decks" href="https://sematext.com/resources/slide-decks/">Slide Decks</a></li>
+		<li id="menu-item-45063" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45063"><a title="Publications" href="https://sematext.com/resources/publications/">Publications</a></li>
+	</ul>
+</li>
+	<li id="menu-item-46486" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-46486 dropdown"><a title="Docs" href="https://sematext.com/docs/">Docs</a>
+	<ul role="menu" class=" dropdown-menu">
+		<li id="menu-item-46487" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46487"><a title="Monitoring" href="https://sematext.com/docs/monitoring/">Monitoring</a></li>
+		<li id="menu-item-46488" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46488"><a title="Logs" href="https://sematext.com/docs/logs/">Logs</a></li>
+		<li id="menu-item-48070" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48070"><a title="Experience" href="https://sematext.com/docs/experience/">Experience</a></li>
+		<li id="menu-item-50380" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50380"><a title="Synthetics" href="https://sematext.com/docs/synthetics/">Synthetics</a></li>
+		<li id="menu-item-46489" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46489"><a title="Tracing" href="https://sematext.com/docs/tracing/">Tracing</a></li>
+	</ul>
+</li>
+	<li id="menu-item-7195" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-has-children menu-item-7195 dropdown"><a title="Blog" href="https://sematext.com/blog/">Blog</a>
+	<ul role="menu" class=" dropdown-menu">
+		<li id="menu-item-49337" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-49337"><a title="Real User Monitoring" href="https://sematext.com/category/monitoring/real-user-monitoring/">Real User Monitoring</a></li>
+		<li id="menu-item-49338" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-49338"><a title="Logging" href="https://sematext.com/category/logging/">Logging</a></li>
+		<li id="menu-item-49339" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-49339"><a title="Monitoring" href="https://sematext.com/category/monitoring/">Monitoring</a></li>
+		<li id="menu-item-50102" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-50102"><a title="Synthetic Monitoring" href="https://sematext.com/category/synthetic-monitoring/">Synthetic Monitoring</a></li>
+		<li id="menu-item-49340" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-49340"><a title="Training" href="https://sematext.com/category/training/">Training</a></li>
+		<li id="menu-item-49341" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-49341"><a title="Search" href="https://sematext.com/category/search/">Search</a></li>
+		<li id="menu-item-49342" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-49342"><a title="See all posts" href="https://sematext.com/blog/?grid=1">See all posts</a></li>
+	</ul>
+</li>
+	<li id="menu-item-45057" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-45057 dropdown"><a title="Why Sematext" href="#">Why Sematext</a>
+	<ul role="menu" class=" dropdown-menu">
+		<li id="menu-item-45064" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45064"><a title="Case Studies" href="https://sematext.com/resources/case-studies/">Case Studies</a></li>
+		<li id="menu-item-45071" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45071"><a title="Industry Comparisons" href="https://sematext.com/resources/industry-comparisons/">Industry Comparisons</a></li>
+	</ul>
+</li>
+	<li id="menu-item-45058" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-45058 dropdown"><a title="Open Source Agents" href="#">Open Source Agents</a>
+	<ul role="menu" class=" dropdown-menu">
+		<li id="menu-item-45065" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45065"><a title="Docker Agents" href="https://sematext.com/docker/">Docker Agents</a></li>
+		<li id="menu-item-45066" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45066"><a title="Kubernetes Agents" href="https://sematext.com/kubernetes/">Kubernetes Agents</a></li>
+		<li id="menu-item-45067" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45067"><a title="Logagent" href="https://sematext.com/logagent/">Logagent</a></li>
+	</ul>
+</li>
+	<li id="menu-item-47266" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-47266 dropdown"><a title="Guides" href="https://sematext.com/guides/">Guides</a>
+	<ul role="menu" class=" dropdown-menu">
+		<li id="menu-item-47265" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47265"><a title="Log Management Guide" href="https://sematext.com/guides/log-management/">Log Management Guide</a></li>
+		<li id="menu-item-47783" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47783"><a title="Elasticsearch Guide" href="https://sematext.com/guides/elasticsearch/">Elasticsearch Guide</a></li>
+		<li id="menu-item-47784" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47784"><a title="Docker Logging Guide" href="https://sematext.com/guides/docker-logs/">Docker Logging Guide</a></li>
+		<li id="menu-item-47918" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47918"><a title="Solr Guide" href="https://sematext.com/guides/solr/">Solr Guide</a></li>
+		<li id="menu-item-47940" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47940"><a title="Real User Monitoring" href="https://sematext.com/guides/what-is-real-user-monitoring/">Real User Monitoring</a></li>
+		<li id="menu-item-48212" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48212"><a title="Java Monitoring Guide" href="https://sematext.com/guides/java-monitoring/">Java Monitoring Guide</a></li>
+		<li id="menu-item-48523" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48523"><a title="ELK Stack Guide" href="https://sematext.com/guides/elk-stack/">ELK Stack Guide</a></li>
+		<li id="menu-item-48908" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48908"><a title="Application Performance Monitoring Guide" href="https://sematext.com/guides/application-performance-monitoring/">Application Performance Monitoring Guide</a></li>
+		<li id="menu-item-49271" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49271"><a title="Kubernetes Logging Guide" href="https://sematext.com/guides/kubernetes-logging/">Kubernetes Logging Guide</a></li>
+		<li id="menu-item-49388" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49388"><a title="Kubernetes Monitoring Guide" href="https://sematext.com/guides/kubernetes-monitoring/">Kubernetes Monitoring Guide</a></li>
+		<li id="menu-item-49770" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49770"><a title="Synthetic Monitoring Guide" href="https://sematext.com/guides/synthetic-monitoring/">Synthetic Monitoring Guide</a></li>
+	</ul>
+</li>
+	<li id="menu-item-45484" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-45484 dropdown"><a title="Most Popular" href="#">Most Popular</a>
+	<ul role="menu" class=" dropdown-menu">
+		<li id="menu-item-45485" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45485"><a title="Elasticsearch DevOps Cheat Sheet" href="https://sematext.com/elasticsearch-devops-cheat-sheet/">Elasticsearch DevOps Cheat Sheet</a></li>
+		<li id="menu-item-45486" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45486"><a title="Elasticsearch Developer Cheat Sheet" href="https://sematext.com/resources/elasticsearch-developer-cheat-sheet/">Elasticsearch Developer Cheat Sheet</a></li>
+		<li id="menu-item-45489" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45489"><a title="Solr Cheat Sheet" href="https://sematext.com/solr-cheat-sheet/">Solr Cheat Sheet</a></li>
+		<li id="menu-item-45507" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45507"><a title="Kubernetes Cheat Sheet" href="https://sematext.com/kubernetes-cheat-sheet/">Kubernetes Cheat Sheet</a></li>
+		<li id="menu-item-45491" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45491"><a title="Docker Commands Cheat Sheet" href="https://sematext.com/docker-commands-cheat-sheet/">Docker Commands Cheat Sheet</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-7205" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7205 dropdown"><button title="About" href="#" data-toggle="dropdown" class="dropdown-toggle">About <span class="caret"></span></button>
+<ul role="menu" class=" dropdown-menu">
+	<li id="menu-item-7206" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7206"><a title="Company" href="https://sematext.com/about/">Company</a></li>
+	<li id="menu-item-7210" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7210"><a title="Customers" href="https://sematext.com/customers/">Customers</a></li>
+	<li id="menu-item-43967" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-43967"><a title="Case Studies" href="https://sematext.com/resources/case-studies/">Case Studies</a></li>
+	<li id="menu-item-7213" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7213"><a title="Partners" href="https://sematext.com/partners/">Partners</a></li>
+	<li id="menu-item-43471" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43471"><a title="Testimonials" href="https://sematext.com/clients/#testimonials">Testimonials</a></li>
+	<li id="menu-item-7208" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7208"><a title="Jobs" href="https://sematext.com/jobs/">Jobs</a></li>
+	<li id="menu-item-7212" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7212"><a title="Engineering" href="https://sematext.com/engineering/">Engineering</a></li>
+	<li id="menu-item-7207" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7207"><a title="Contact" href="https://sematext.com/contact/">Contact</a></li>
+	<li id="menu-item-49967" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-49967"><a title="Status" href="https://status.sematext.com/">Status</a></li>
+</ul>
+</li>
+<li id="menu-item-46020" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46020"><a title="See Live Demo" href="https://apps.sematext.com/demo">See Live Demo</a></li>
+<li id="menu-item-7326" class="btn btn-warning menu-item menu-item-type-custom menu-item-object-custom menu-item-7326"><a title="Start Free Trial" href="https://apps.sematext.com/ui/registration">Start Free Trial</a></li>
+<li id="menu-item-7327" class="btn btn-primary btn-outline menu-item menu-item-type-custom menu-item-object-custom menu-item-7327"><a title="Login" href="https://apps.sematext.com/ui/login/">Login</a></li>
+</ul></div>					</div>
+				</div>
+			</div>
+		</nav><!-- .site-navigation -->
+
+	</header><!-- #masthead -->
+
+
+
+	<div id="content" class="site-content">
+
+		<div class="top-section">
+								</div>
+
+		<div class="container-fluid main-content-area">
+
+<style media="screen">
+.hljs {
+    display: block;
+    overflow-x: auto;
+    background: #011a27;
+    line-height: 1.65;
+    white-space: inherit;
+}
+.hljs, .hljs-subst { color: #ccc; }
+.hljs-comment {
+    color: #777;
+    font-style: italic;
+}
+.hljs-keyword, .hljs-attribute, .hljs-selector-tag, .hljs-meta-keyword, .hljs-doctag, .hljs-name {
+    color: #fff;
+    font-weight: bold
+}
+.hljs-type, .hljs-string, .hljs-number, .hljs-selector-id, .hljs-selector-class, .hljs-quote, .hljs-template-tag, .hljs-deletion {
+    color: #09a;
+    font-weight: bold;
+}
+.hljs-title, .hljs-section {
+    color: #f70;
+    font-weight: bold
+}
+.hljs-regexp, .hljs-symbol, .hljs-variable, .hljs-template-variable, .hljs-link, .hljs-selector-attr, .hljs-selector-pseudo { color: #cc3 }
+.hljs-literal { color: #2586e4 }
+.hljs-built_in, .hljs-bullet, .hljs-code, .hljs-addition { color: #ff842c }
+.hljs-meta { color: #1f7199 }
+.hljs-meta-string { color: #4d99bf }
+.hljs-emphasis { font-style: italic }
+.hljs-strong { font-weight: bold }
+
+a#continue-conversation-twitter { line-height: 1.8 }
+a#continue-conversation-twitter:before {
+    content: '\f202';
+    font: normal 24px/1 'social-logos' !important;
+    display: inline-block;
+    padding: 5px 0 0 0;
+    margin: 0 8px 0 0;
+    position: relative;
+    top: 2px;
+}
+a#continue-conversation-twitter:active,
+a#continue-conversation-twitter:focus {
+    color: #fff;
+}
+
+#scroll-status-bar {
+    position: fixed;
+    height: 3px;
+    width: 100%;
+    z-index: 1000;
+    overflow: hidden;
+}
+#scroll-status-percent {
+    height: 100%;
+    width: 0%;
+    background: rgb(30, 141, 232);
+    box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, .1);
+    transition: width .25s ease-in-out;
+}
+</style>
+
+
+<div id="scroll-status-bar"><div id="scroll-status-percent"></div></div>
+
+
+<div class="blog-post-hero container-fluid">
+    <div class="blog-post-hero-bg">
+        <div class="blog-post-hero-bg-img" style="background-image: url(https://sematext.com/wp-content/uploads/2019/09/Log-analysis-FI.jpg)"></div>
+    </div>
+    <div class="container"><img src="https://sematext.com/wp-content/uploads/2019/09/Log-analysis-FI.jpg" id="the-featured-image" /></div>
+</div>
+
+<div class="container-fluid container-single-blog-post">
+<div class="container">
+
+
+    <article class="single-blog-post" id="post-48226">
+
+        <aside>
+            <div class="aside-column">
+                <div class="aside-sticky">
+                    <div id="toc-nav-status">Log Analysis: A Complete Guide Covering from What it is, Use Cases &#038; Best Practices You Need to Know About</div>
+                    <div id="toc-nav-wrapper">
+                        <nav id="toc-nav"></nav>
+                    </div>
+                    <div class="aside-troubleshooting"></div>
+                </div>
+            </div>
+        </aside>
+
+        <main>
+
+            <!-- Header -->
+            <header>
+
+                <div class="blog-post-categories">
+                                         <a href="https://sematext.com/category/logging/" rel="category tag">Logging</a>                </div>
+
+                <div class="blog-post-title">
+                    <h1 elementtiming="post-header">Log Analysis: A Complete Guide Covering from What it is, Use Cases &#038; Best Practices You Need to Know About</h1>
+                    <p><img src="https://secure.gravatar.com/avatar/18ddfa48f19355af2afd971dce4c899c?s=32&d=mm&r=g" srcset="https://secure.gravatar.com/avatar/18ddfa48f19355af2afd971dce4c899c?s=64&d=mm&r=g" 2x width="32" height="32" alt="sematext" /> <span class="author vcard"><a class="url fn n" href="https://sematext.com/blog/author/sematext/">sematext</a></span> on <span class="posted-on"><a href="https://sematext.com/blog/log-analysis/" rel="bookmark"><time class="entry-date published" datetime="2020-09-18T08:59:59-04:00">September 18, 2020</time><time class="updated" datetime="2020-09-18T10:01:06-04:00">September 18, 2020</time></a></span></p>
+                </div>
+
+                <figure class="blog-post-featured-image">
+                    <img elementtiming="post-featured-image" src="https://sematext.com/wp-content/uploads/2019/09/Log-analysis-FI.jpg" />
+                </figure>
+
+                                    <style>.blog-post-featured-image { background-image: url(https://sematext.com/wp-content/uploads/2019/09/Log-analysis-FI.jpg); }</style>
+                                            </header>
+
+            <!-- Main Content -->
+            <section>
+
+                <div id="the-content">
+                    <p>Logs are one of the most valuable assets when it comes to IT system management and monitoring. As they record every action that took place on your network, logs provide the insight you need to spot issues that might impact performance, compliance, and security. That’s why <a href="https://sematext.com/guides/log-management/#how-does-log-management-work">log management</a> should be part of any monitoring infrastructure.</p>
+<p>The first challenge is to <a href="https://sematext.com/blog/log-aggregation/">aggregate your logs</a> in a single and accessible location which you can easily do as part of your <a href="https://sematext.com/logsene/">logging solution</a> setup. However, merely centralizing logs is not enough &#8211; to gain insights from the aggregated logs you need to follow up with log analysis, which is what we’ll cover in this post.</p>
+<p>By the end of this tutorial, you&#8217; find out <strong>what log analysis is, why it is important, and how to perform it to make sure your whole infrastructure is up to par</strong>.</p>
+<h2 id="h.2qa4zq62tukb"><strong>What Is Log Analysis: A definition</strong></h2>
+<p><strong>Log analysis</strong> is the process of making sense of computer-generated log messages, also known as log events, audit trail records, or simply logs. Log analysis provides useful metrics that paint a clear picture of what has happened across the infrastructure. You can use this data to improve or solve performance issues within an application or infrastructure. Looking at the bigger picture, companies analyze logs to proactively and reactively mitigate risks, comply with security policies, audits, and regulations, and understand <a href="https://sematext.com/guides/what-is-real-user-monitoring/"><span style="font-weight: 400;">online user behavior</span></a>.</p>
+<h2 id="h.vnsptycj75pb"><strong>Why Is Log Analysis Important: Purpose and Benefits</strong></h2>
+<p>Most businesses are required to perform log archiving and log analysis as part of their compliance regulations. They must regularly monitor and analyze system logs to search for errors, anomalies, or suspicious or unauthorized activity that deviates from the norm. Log analysis allows them to re-create the chain of events that led up to a problem and effectively troubleshoot it.</p>
+<p>Moreover, while at first glance data log analysis may seem to affect only the IT aspect of your business, in fact, it impacts all its aspects, from legal to finance, sales and marketing, human resources, security, and operations. When leveraging log analysis, you can detect issues before or as they happen and avoid time waste, unnecessary delays, and additional costs, as we’ll explain shortly.</p>
+<p>But <strong>let’s dive into the specifics &#8211; here’s why log analysis is necessary for your business</strong>:</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="alignnone size-full wp-image-48242 dozyload" data-src="https://sematext.com/wp-content/uploads/2019/09/Log-analysis-importance-1.png" alt="Log analysis importance" width="2338" height="1276" data-srcset="https://sematext.com/wp-content/uploads/2019/09/Log-analysis-importance-1.png 2338w, https://sematext.com/wp-content/uploads/2019/09/Log-analysis-importance-1-300x164.png 300w, https://sematext.com/wp-content/uploads/2019/09/Log-analysis-importance-1-768x419.png 768w, https://sematext.com/wp-content/uploads/2019/09/Log-analysis-importance-1-1024x559.png 1024w, https://sematext.com/wp-content/uploads/2019/09/Log-analysis-importance-1-750x410.png 750w" sizes="(max-width: 2338px) 100vw, 2338px" /></p>
+<h3 id="h.z6srghsaf45w"><strong>Reduce Problem Diagnosis and Resolution Time</strong></h3>
+<p>Hunting down issues can be a tedious and time-wasting task, especially when it’s not clear if the problem is on the application layer or infrastructure.</p>
+<p>Whether it’s one or the other, or a combination of the two, they prolong the time your app delivers a poor <a href="https://sematext.com/blog/website-performance-metrics/"><span style="font-weight: 400;">user experience</span></a>. Log file analysis allows you to take a proactive approach by pointing out issues and their root causes before or as they happen. This avoids time loss and reduces MTTR.</p>
+<p>Also, DevOps can intervene and solve problems faster. <span style="font-weight: 400;">This is what </span><a href="https://sematext.com/logsene/"><span style="font-weight: 400;">Sematext Logs</span></a><span style="font-weight: 400;"> is all about: shortening the time a business needs to detect and solve production problems and allow team</span>s to focus more on improving existing and adding new functionalities to products and services they are creating instead of spending time troubleshooting. This, in turn, increases the value of software they are building, leads to more frequent releases, and increases the overall value for the business.</p>
+<h3 id="h.z7xmcn4mac6y"><strong>Reduce Customer Churn</strong></h3>
+<p>Customers are more selective than ever when it comes to the applications they use. With such a large pool of alternatives at their disposal, they can easily turn to one of your competitors if they’re not satisfied with your product or service. You must deliver an excellent user experience that, looking beyond functionalities, boils down to a stable and performant application with regular updates.</p>
+<p>Frequent downtimes and poor product quality are among the top reasons for high<span style="font-weight: 400;"> </span><a href="https://sematext.com/blog/ux-metrics/#toc-customer-churn-24"><span style="font-weight: 400;">customer churn</span></a>. By analyzing your log files, you can detect the root cause of performance and stability issues faster, thus improving your users’ experience and reducing customer churn</p>
+<p>For example, you’ll be able to search for HTTP errors and understand where and why they occurred; or detect when users don’t receive the information they searched for or if their requests are taking too long to load, or if some microservices are experiencing issues, and so on.</p>
+<h3 id="h.uqrymsh4bhp5"><strong>Improve Resource Usage &amp; Production Infrastructure Costs</strong></h3>
+<p>One of the most challenging aspects of any organization is resource management &#8211; from network bandwidth to CPU cycles or storage capacity and beyond.</p>
+<p>You can speculate resource sizing, but you either end with not enough resources &#8211; which leads to poor performance, frustrated customers and, ultimately, lost sales &#8211; or too many &#8211; which increase expenses, thus affecting your bottom line. Instead of guessing your resource requirements, log file analysis &#8211; along with metrics-based resource usage and planning &#8211; allows you to easily and more accurately understand your current resource utilization and your future resource requirements.</p>
+<p>Also, when it comes to system performance, more often than not, it’s not the software at fault, but rather users’ requests that overload your system to the point where it has trouble handling the demand. Log analysis allows you to track resource usage and detect where your system is struggling so that you can add extra capacity.</p>
+<p>On the other hand, you can also see underutilized or dead assets so that you can restructure and optimize your infrastructure to improve productivity and proficiency. You can also use server-sprawl data to optimize your on-premise or <a href="https://sematext.com/blog/inventory-monitoring-for-your-cloud-infrastructure/">cloud infrastructure</a> costs.</p>
+<h2 id="h.ozkqhyg3hneu"><strong>How Does Log Analysis Work and How Do You Do It?</strong></h2>
+<p>Logs are streams of chronologically arranged messages generated by applications, network devices, operating systems, and any programmable or smart device.</p>
+<p><span style="font-weight: 400;">When analyzed, they can provide a wealth of information about the components in your stack and how they interact. Here’s how you can perform log analysis the proper way:</span></p>
+<ol>
+<li style="font-weight: 400;"><b>Collect </b><span style="font-weight: 400;">&#8211; set up a log collector to gather all the logs across your infrastructure</span></li>
+<li style="font-weight: 400;"><b>Centralize and index </b><span style="font-weight: 400;">&#8211; ship the logs to a centralized logging platform. It’s easier to query and analyze logs from a single pane of glass. When collected to the central location, logs are also normalized to a common format to avoid confusion and ensure uniformity. Along with indexing, it makes data readily available and searchable for efficient log analysis. Read more about </span><a href="https://sematext.com/blog/log-aggregation/"><span style="font-weight: 400;">log aggregation</span></a><span style="font-weight: 400;">.</span></li>
+<li style="font-weight: 400;"><b>Search and analyze</b><span style="font-weight: 400;"> &#8211; you can search for logs matching various patterns, and structures. For example, logs with a specific exception or severity level. Analyzing logs via reports and dashboards make information available for everyone including people outside the IT department. Not to mention, of course, that it’s easier to spot trends or anomalies by looking at graphs or other visual representations of your data.</span></li>
+<li style="font-weight: 400;"><b>Monitor and alert</b><span style="font-weight: 400;"> &#8211; set up alerts to notify you in real-time when certain conditions are not met. This help detect what happened, when, where, why, and how it impacted performance, enabling you to build appropriate countermeasures and models to avoid risks. Alerts may also have triggers, such as calling a webhook to restart a service</span>.</li>
+</ol>
+<h2 id="h.xq7jlkgzcm5n"><strong>Log Analysis Use Cases &amp; Applications</strong></h2>
+<p>From handling security issues to troubleshooting <a href="https://sematext.com/guides/application-performance-monitoring/">app performance</a> anomalies or compliance with regulations, there is a wide range of situations where analyzing log data provides invaluable insights. Here are <strong>the most common use cases for log analysis</strong>:</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="alignnone size-full wp-image-48260 dozyload" data-src="https://sematext.com/wp-content/uploads/2019/09/Log-Analysis-Use-Cases-2.png" alt="Log Analysis Use Cases" width="2340" height="1280" data-srcset="https://sematext.com/wp-content/uploads/2019/09/Log-Analysis-Use-Cases-2.png 2340w, https://sematext.com/wp-content/uploads/2019/09/Log-Analysis-Use-Cases-2-300x164.png 300w, https://sematext.com/wp-content/uploads/2019/09/Log-Analysis-Use-Cases-2-768x420.png 768w, https://sematext.com/wp-content/uploads/2019/09/Log-Analysis-Use-Cases-2-1024x560.png 1024w, https://sematext.com/wp-content/uploads/2019/09/Log-Analysis-Use-Cases-2-750x410.png 750w" sizes="(max-width: 2340px) 100vw, 2340px" /></p>
+<h3 id="h.6vk2f0c3pe6f"><strong>Better System Troubleshooting</strong></h3>
+<p>One of the most obvious use cases for log analysis is probably in troubleshooting servers, networks or systems, from application crashes to configuration issues and hardware failure. Fast troubleshooting helps avoid downtime and performance issues that can increase customer churn.</p>
+<p>Troubleshooting with log analysis is often used in production monitoring as it enables DevOps to detect and solve critical system errors faster, improving operational efficiency. They have more time to invest in production, thus reducing production downtime.</p>
+<h3 id="h.isxcr25yijgn"><strong>Respond Better to Data Breaches and Other Cyber Security Incidents</strong></h3>
+<p>When it comes to cyber-security, logs provide a fountain of information about your attackers, such as IP addresses, client/server requests, HTTP status codes, and more. However, they remain under-appreciated. Many companies fail to understand the value of logging analysis still relying only on basic firewalls or other security software to protect their data against DNS attacks. However, without log analysis, you can’t understand security risks and respond accordingly.</p>
+<p>Logs act as a red flag. With security log analysis, you can track down suspicious activities and set up thresholds, rules, and parameters to protect your system from similar threats in the future. With log analysis, you’re even able to assist in blocking your attackers by their IP address.</p>
+<p>Log data analysis systems can alert you whenever they detect anomalies so that you can quickly intervene and eliminate the threat. They use artificial intelligence and machine learning to spot patterns and behaviors that would have otherwise flown under the radar.</p>
+<p>Furthermore, logs are extremely useful in cyber forensics. In case of an investigation, forensic log analysis can provide the time and place of every event that happened in your network or system.</p>
+<h3 id="h.lrqckwp3mpoe"><strong>Ensure Compliance with Security Policies, Regulations &amp; Audits</strong></h3>
+<p>Most organizations are subject to government-set standards and industry requirements they need to adhere to guarantee safety and functionality. As such, many are required to log data and analyze it on a daily basis. Doing so, not only helps to defend against insider and outsider threats but also to demonstrate a willingness to comply with ISO, <a href="https://sematext.com/blog/gdpr-top-5-logging-best-practices/">General Data Protection Regulation (GDPR)</a>, Health Insurance Portability and Accountability Act (HIPAA), Sarbanes-Oxley, PCI DSS, and many others.</p>
+<p>Besides being critical to cyber security, log files analysis can also help with audit requirements, litigation needs, subpoena requests, and forensic investigations.</p>
+<p>In short, considering the ever-growing complexity of systems and software solutions, log analysis is the only way to ensure policies are followed, and regulations are met.</p>
+<h3 id="h.6a4t7ods4azx"><strong>Understand Online User Behavior</strong></h3>
+<p>Log analysis is one of the best ways to understand your app or webapp’s visitors&#8217; behavior. <span style="font-weight: 400;">It shows not only how many visitors you had but also allows you to </span><a href="https://sematext.com/experience/"><span style="font-weight: 400;">re-trace their exact journey</span></a><span style="font-weight: 400;"> and understand on what pages they spent the most time, what were they doing on your website, why are there changes in the number of visitors, and so on.</span></p>
+<p>With trends and patterns in plain view, it’s easy to spot opportunities like when is the best time to send a newsletter, when to release a new version or launch a product, when to close down your site for maintenance or tests, and much more.</p>
+<p>Furthermore, log analysis can be used to impact marketing efforts as well. By collecting data such as referring sites, page accessed, and <a href="https://sematext.com/blog/ux-metrics/#toc-conversion-rate-11"><span style="font-weight: 400;">conversion rates</span></a>, you can determine how well your marketing campaign does and take measures to improve it if needed.</p>
+<p>Similarly, as logs contain information about conversion errors, customer navigation, and traffic loads, logging analysis can provide meaningful insights about <span style="font-weight: 400;"> how to </span><a href="https://sematext.com/blog/improve-website-performance/"><span style="font-weight: 400;">optimize website performance</span></a> to better support the sales process.</p>
+<h2 id="h.o8qkhjlzz2o"><strong>Log Analysis Best Practices: Functionalities You Should Know About</strong></h2>
+<p>Log analysis is a complex process that should follow the following functions:</p>
+<p><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="alignnone wp-image-48251 size-full dozyload" data-src="https://sematext.com/wp-content/uploads/2019/09/Log-Analysis-best-practices.png" alt="Log Analysis best practices" width="2340" height="1280" data-srcset="https://sematext.com/wp-content/uploads/2019/09/Log-Analysis-best-practices.png 2340w, https://sematext.com/wp-content/uploads/2019/09/Log-Analysis-best-practices-300x164.png 300w, https://sematext.com/wp-content/uploads/2019/09/Log-Analysis-best-practices-768x420.png 768w, https://sematext.com/wp-content/uploads/2019/09/Log-Analysis-best-practices-1024x560.png 1024w, https://sematext.com/wp-content/uploads/2019/09/Log-Analysis-best-practices-750x410.png 750w" sizes="(max-width: 2340px) 100vw, 2340px" /></p>
+<p><strong>Pattern Detection and Recognition</strong> refers to filtering incoming messages based on a pattern book. Detecting patterns is an integral part of log analysis as it helps spot anomalies.</p>
+<p><strong>Log Normalization</strong> is the function of converting log elements such as IP addresses or timestamps, to a common format.</p>
+<p><strong>Classification and Tagging</strong> is the process of tagging messages with keywords and categorizing them into classes. This enables you to filter and customize the way you visualize data.</p>
+<p><strong>Correlation Analysis</strong> refers to collecting data from different sources and finding messages that belong to a specific event. It helps to make connections between logs since multiple systems record an incident. For example, in the case of malicious activity, it allows you to filter and correlate logs coming from your network devices, firewalls, servers, and other sources. Correlation analysis is usually associated with alerting systems &#8211; based on the pattern you identified, you can create alerts for when your log analyzer spots similar activity in your logs.</p>
+<p><strong>Artificial Ignorance</strong> is a machine learning process that recognizes and discards log entries that are not useful and is used to detect anomalies. When it comes to logging analysis, it means to ignore routine messages generated from the normal operation of the system like regular system updates, thus labeling them as uninteresting. Artificial ignorance alerts your about new and unusual events, even about common events that should have occurred but did not &#8211; for example, if a weekly update has failed. These should be investigated.</p>
+<h2 id="h.i8h5p2ktgkee"><strong>Log Analysis Tools</strong></h2>
+<p><span style="font-weight: 400;">Businesses generate huge amounts of log data which makes log analysis a tedious process unless you’re using a log analysis software. </span></p>
+<p><span style="font-weight: 400;">Log analysis tools are essential for effective monitoring, enabling you to extract meaningful data from logs and troubleshoot app- or system-level errors. They allow you to detect trends and patterns and use these insights to anticipate and mitigate risks and even guide your business decisions. </span></p>
+<p><span style="font-weight: 400;">From developers to DevOps, SecOps, and more, every IT professional would benefit from a log analysis software.</span></p>
+<p><span style="font-weight: 400;">When choosing your log analysis solution, we </span><span style="font-weight: 400;">recommend</span><span style="font-weight: 400;"> looking beyond budget and </span><span style="font-weight: 400;">functionalities</span><span style="font-weight: 400;"> and also </span><span style="font-weight: 400;">take</span><span style="font-weight: 400;"> into </span><span style="font-weight: 400;">consideration how</span><span style="font-weight: 400;"> much </span><span style="font-weight: 400;">time you</span><span style="font-weight: 400;"> have to invest in analyzing your logs. </span><span style="font-weight: 400;">Do you want to spend time building a log analysis tool, or you’d rather use a service that does it out of the box so that you can focus on your core business? Discover why </span><a href="https://sematext.com/elastic-stack-alternative/"><span style="font-weight: 400;">you’d benefit more from a fully-featured log analysis solution</span></a><span style="font-weight: 400;"> such as our </span><a href="https://sematext.com/logsene/"><span style="font-weight: 400;">Sematext Logs</span></a><span style="font-weight: 400;">.</span></p>
+<h3><span style="font-weight: 400;">Why Use Sematext for Log Analysis?</span></h3>
+<p><a href="https://sematext.com/cloud/"><span style="font-weight: 400;">Sematext Cloud</span></a><span style="font-weight: 400;"> is a unified </span><a href="https://sematext.com/logsene/"><span style="font-weight: 400;">log management</span></a><span style="font-weight: 400;"> and monitoring platform that can be used as a service or installed on-premises. The log analysis functionality extends that of the </span><a href="https://sematext.com/guides/elk-stack/"><span style="font-weight: 400;">ELK stack</span></a><span style="font-weight: 400;">, meaning you can collect logs a large number of log shippers, logging libraries, platforms, and frameworks. </span><span style="font-weight: 400;">You can collect, store, and index logs from a wide variety of sources since Sematext is compatible with a large </span><a href="https://sematext.com/docs/integration/#log-shippers"><span style="font-weight: 400;">number of log shippers, logging libraries, platforms, and frameworks</span></a><span style="font-weight: 400;">. With Sematext, you get powerful searching, filtering, and tagging capabilities that enable easy and fast anomaly detection. It enables efficient monitoring by allowing you to correlate logs with infrastructure and application metrics. You can then set up alerts on both to be notified whenever alert rules are met so that you can quickly jump in and start tracking down the issues</span>.</p>
+<h2 id="h.or8aoplt8y51"><strong>Wrapping Up</strong></h2>
+<p>Thanks to its multiple purposes, log analysis is a critical part of log management. It helps with monitoring and alerting, measuring productivity, security incidents response, governmental compliance, and it’s useful even in cyber-forensics.</p>
+<p>There are plenty of log analysis software to help you make sense of your log data, both free and paid. They help streamline your DevOps workflow and saves time by avoiding going through massive amounts of unstructured data. With such tools, you are better equipped to detect issues and threats before they impact your business, find the root cause, and proactively and reactively mitigate risks. If you’re not already using one, it’s best to get it soon and not wait for a serious incident to come up..</p>
+<p>If you need help deciding or any support regarding logging, at Sematext, we offer <a href="https://sematext.com/consulting/logging/">Logging Consulting</a> so feel free to reach us out!</p>
+<p><b>Further reading:</b></p>
+<ul>
+<li style="font-weight: 400;"><a href="https://sematext.com/guides/log-management/"><span style="font-weight: 400;">Log management guide</span></a><span style="font-weight: 400;"> gives you a refresher on logging basic concepts</span></li>
+<li style="font-weight: 400;"><a href="https://sematext.com/guides/kubernetes-logging/"><span style="font-weight: 400;">Kubernetes logging guide</span></a><span style="font-weight: 400;"> is a tutorial about how to centralize and analyze Kubernetes logs</span></li>
+<li style="font-weight: 400;"><a href="https://sematext.com/guides/docker-logs/"><span style="font-weight: 400;">Docker logging guide</span></a><span style="font-weight: 400;"> offers an introduction into how to log and analyze in Docker</span></li>
+<li style="font-weight: 400;"><a href="https://sematext.com/blog/linux-logs/"><span style="font-weight: 400;">Linux logging guide</span></a><span style="font-weight: 400;"> is a tutorial about how to view, search, and centralize Linux logs.</span></li>
+</ul>
+<p style="height: 11pt;">
+<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Share</h3><div class="sd-content"><ul><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-48226" class="share-twitter sd-button share-icon" href="https://sematext.com/blog/log-analysis/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-48226" class="share-facebook sd-button share-icon" href="https://sematext.com/blog/log-analysis/?share=facebook" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a></li><li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-48226" class="share-linkedin sd-button share-icon" href="https://sematext.com/blog/log-analysis/?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a></li><li class="share-reddit"><a rel="nofollow noopener noreferrer" data-shared="" class="share-reddit sd-button share-icon" href="https://sematext.com/blog/log-analysis/?share=reddit" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a></li><li class="share-email"><a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon" href="https://sematext.com/blog/log-analysis/?share=email" target="_blank" title="Click to email this to a friend"><span>Email</span></a></li><li class="share-end"></li></ul></div></div></div>
+<div id='jp-relatedposts' class='jp-relatedposts' >
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+</div>                    <div id="twitter-footer-button">
+                        <p class="text-center spacing-20"><a href="https://twitter.com/sematext" id="continue-conversation-twitter" class="g-btn-primary">Continue the conversation</a></p>
+                    </div>
+                </div>
+
+                            </section>
+
+        </main>
+    </article>
+
+
+
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.6/build/highlight.min.js" charset="utf-8"></script>
+<script>
+
+function _slugify( str ) {
+    return str.toString().toLowerCase()
+        .replace(/\s+/g, '-')
+        .replace(/[^\w\-]+/g, '')
+        .replace(/\-\-+/g, '-');
+}
+
+function _tocJump(where) {
+
+    var _where = where.split('#')[1];
+    var _target_y = jQuery('#' + _where).offset().top;
+    jQuery('html,body').animate({ scrollTop: _target_y - 130 }, 350);
+    window.location.hash = '#' + _where;
+}
+
+function _toc() {
+
+    var _article = document.querySelector("article#post-48226 > main > section");
+    var _toc = '<ul class="toc">';
+    var _hs = [].slice.call( _article.querySelectorAll('h2, h3:not([class])') );
+        _hs.forEach(function(el, i) {
+
+            var _class = 'header-' + el.tagName.toLowerCase();
+            var _txt = el.innerText;
+            var _id = 'toc-' + _slugify(_txt) + '-' + i;
+                el.id = _id; // Set anchor
+            if (!!_txt) { // Set menu item
+                _toc += '\n';
+                _toc += '<li class="' + _class + '"><a href="#' + _id + '" title="' + _txt + '" onclick="_tocJump(this.href); return false;">' + _txt + '</a></li>';
+            }
+        });
+
+    // Close TOC
+    _toc += '\n';
+    _toc += '</ul>';
+    _toc = (!_hs.length) ? '' : _toc;
+
+    // Inject TOC
+    var toc_nav = document.querySelector('nav#toc-nav');
+    var is_multipost = !!toc_nav.querySelector('#serial-posts-wrapper')
+    if ( is_multipost ) {
+
+        var _current = toc_nav.querySelector('.current-inactive');
+            _current.innerHTML += _toc
+
+        var _toc_items = toc_nav.querySelectorAll('li.serial-posts-list-item');
+            _toc_items = Array.from(_toc_items);
+            _toc_items.forEach(function(el, i) {
+                el.innerHTML = 'Part '+ (i+1) +': ' + el.innerHTML;
+            });
+
+        var _ultoc_open = true;
+        _current.addEventListener('click', function(e) {
+            if ( _ultoc_open == true ) {
+                this.querySelector('ul.toc').style.display = 'none';
+                _ultoc_open = false;
+            } else {
+                this.querySelector('ul.toc').style.display = 'block';
+                _ultoc_open = true;
+            }
+        });
+        _current.querySelector('ul').addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+
+    } else {
+
+        var _toc_title = '<h3 class="serial-posts-heading">Table of Contents</h3>';
+        toc_nav.innerHTML += (_toc.length > 0) ? _toc_title : '';
+        toc_nav.innerHTML += _toc;
+    }
+}
+
+function _tocOpenListener() {
+
+    [].forEach.call( document.querySelectorAll('#toc-nav-status, #toc-nav ul li a'), function(el, i) {
+        el.addEventListener('click', function() {
+            document.querySelector('#toc-nav').classList.toggle('open');
+        });
+    });
+}
+
+function _highlighter() {
+
+    var _pre = document.querySelectorAll('pre');
+        _pre = Array.from(_pre);
+        _pre.forEach(function(el) {
+
+            var _current = el.innerHTML;
+            var _code = document.createElement('code');
+                _code.innerHTML = _current;
+
+            el.innerHTML = '';
+            el.appendChild(_code);
+
+            hljs.highlightBlock(_code);
+        });
+}
+
+function _scrollBar() {
+
+    var _scrolled = Math.round((
+        (document.body.scrollTop || document.documentElement.scrollTop) /
+        ((document.documentElement.scrollHeight - document.documentElement.clientHeight) - document.querySelector('.footer-area').offsetHeight)) * 100);
+        _scrolled = Math.min(100, _scrolled)
+
+    document.querySelector('#scroll-status-percent').style.width = _scrolled + '%';
+}
+
+function _twitterButton() {
+
+    // Positioning
+    var _twitter_button_container = document.querySelector('#twitter-footer-button');
+    var _twitter_button_target = document.createElement('div');
+        _twitter_button_target.innerHTML = _twitter_button_container.innerHTML;
+    var _twitter_button_new = document.querySelector('#the-content').insertBefore(_twitter_button_target, document.querySelector('.sharedaddy'));
+        _twitter_button_container.innerHTML = '';
+
+    var _twitter_button = document.getElementById('continue-conversation-twitter');
+        _twitter_button.onclick = function(e) {
+            e.preventDefault();
+            var _master = document.querySelector('li.share-twitter a');
+                _master.click();
+        }
+}
+
+function _sharerPosition() {
+
+    document.querySelector('.aside-troubleshooting').innerHTML = document.querySelector('.sharedaddy').innerHTML;
+}
+
+function _checkActiveItem(sections) {
+
+    var _viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    var _output = [];
+    for (var i = 0; i < sections.length; i++) {
+        var _s = document.querySelector('#the-content #' + sections[i]).getBoundingClientRect();
+        if (_s.y < _viewportHeight) {
+            _output.push({'i':i, 'h':_s.y});
+        }
+    }
+
+    var _el = false;
+    if ( _output.length == 1 ) { _el = _output[0].i; }
+    if ( _output.length >= 2 ) {
+        var _last = _output[_output.length-1];
+        var _penu = _output[_output.length-2];
+        _el = ( _last.h < 200 ) ? _last.i : _penu.i
+    }
+
+    // Set if applicable
+    if ( _el !== false && (_el || _el === 0) ) { _setActiveItem(_el); } else { _removeActiveItem() }
+}
+
+function _removeActiveItem() {
+    var els = document.querySelectorAll('nav#toc-nav ul.toc a');
+    [].forEach.call( els, function(el) {
+        el.classList.remove('active');
+    })
+
+}
+function _setActiveItem(active) {
+    var els = document.querySelectorAll('nav#toc-nav ul.toc a');
+    [].forEach.call( els, function(el, i) {
+        if ( i == active ) {
+            el.classList.add('active');
+        } else {
+            el.classList.remove('active');
+        }
+    })
+}
+
+function _getSections() {
+
+    return Array.from(document.querySelectorAll('nav#toc-nav ul.toc a')).map(function(el) {
+        return el.href.split('#')[1];
+    });
+}
+
+function _fiColor() {
+
+    function _rgbToHex(rgb) {
+        function cHex(c) {
+            let _hex = c.toString(16);
+            return _hex.length == 1 ? "0" + _hex : _hex;
+        }
+        return "#" + cHex(rgb.r) + cHex(rgb.g) + cHex(rgb.b);
+    }
+
+    let _canvas = document.createElement('canvas');
+    let _context = _canvas.getContext && _canvas.getContext('2d');
+    let _rgb = { r:0, g:0, b:0 };
+
+    let _fi = document.querySelector('#the-featured-image');
+    let _height = _canvas.height = _fi.naturalHeight || _fi.offsetHeight || _fi.height;
+    let _width = _canvas.width = _fi.naturalWidth || _fi.offsetWidth || _fi.width;
+
+    let _xhr = new XMLHttpRequest();
+
+        _xhr.open('GET', _fi.src);
+        // _xhr.open('GET', 'https://cors-anywhere.herokuapp.com/' . _fi.src);
+        _xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        _xhr.responseType = "blob";
+        _xhr.onload = function() {
+
+            let _urlCreator = window.URL || window.webkitURL;
+            let _imgUrl = _urlCreator.createObjectURL( _xhr.response );
+
+            let _img = new Image();
+                _img.onload = function() {
+
+                    let _sampleSize = 20;
+                    _context.drawImage(_img, 0, 0, _width, _height);
+
+                    let _data = _context.getImageData(0, 0, _sampleSize, _sampleSize);
+                    let _length = _data.data.length;
+                    let _counter = 0;
+                    let _pixelJump = 1;
+                    let _i = -4;
+                    while ( (_i += _pixelJump * 4) < _length ) {
+                        ++_counter;
+                        _rgb.r += _data.data[_i];
+                        _rgb.g += _data.data[_i+1];
+                        _rgb.b += _data.data[_i+2];
+                    }
+
+                    _rgb.r = ~~(_rgb.r/_counter);
+                    _rgb.g = ~~(_rgb.g/_counter);
+                    _rgb.b = ~~(_rgb.b/_counter);
+
+                    document.querySelector('.blog-post-hero-bg').style.background = _rgbToHex(_rgb);
+                    document.querySelector('.blog-post-hero-bg-img').classList.add('fadeout');
+
+                }
+                _img.src = _imgUrl;
+                _img.onerror = function() { console.log("Error loading image"); };
+
+        };
+        _xhr.send();
+}
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    _toc();
+    _tocOpenListener();
+    _highlighter();
+    _twitterButton();
+    _sharerPosition();
+
+    window.addEventListener('scroll', function() {
+
+        _scrollBar();
+        _checkActiveItem(_getSections());
+    });
+});
+
+window.addEventListener("load", function() {
+
+    _fiColor();
+})
+
+</script>
+		</div><!-- close .row -->
+	</div><!-- close .container -->
+</div><!-- close .site-content -->
+
+	<div class="footer-area">
+
+		<div class="container footer-inner">
+			<div class="col-md-3 col-sm-6">
+				<h4>Products</h4>
+				<ul>
+					<li><a href="/cloud/" title="Sematext Cloud">Sematext Cloud</a></li>
+					<li><a href="/spm/" title="Infrastructure Monitoring">Infrastructure Monitoring</a></li>
+					<li><a href="/logsene/" title="Log Management">Log Management</a></li>
+					<li><a href="/experience/" title="Real User Monitoring">Real User Monitoring</a></li>
+					<li><a href="/synthetic-monitoring/" title="Synthetic Monitoring">Synthetic Monitoring</a></li>
+					<li><a href="/tracing/" title="Distributed Transaction Tracing">APM / Tracing</a></li>
+					<li><a href="/enterprise/" title="Sematext Enterprise">Sematext Enterprise</a></li>
+				</ul>
+			</div>
+			<div class="col-md-2 col-sm-6">
+				<h4>Services</h4>
+				<ul>
+					<li><a href="/consulting/" title="Consulting">Consulting</a></li>
+					<li><a href="/support/" title="Support">Support</a></li>
+					<li><a href="/training/" title="Training">Training</a></li>
+				</ul>
+			</div>
+			<div class="col-md-2 col-sm-6">
+				<h4>About</h4>
+				<ul>
+					<li><a href="/about/" title="Company">Company</a></li>
+					<li><a href="/blog/" title="Blog">Blog</a></li>
+					<li><a href="/jobs/" title="Jobs">Jobs</a></li>
+					<li><a href="/customers/" title="Customers">Customers</a></li>
+					<li><a href="https://status.sematext.com/" title="Status">Status</a></li>
+				</ul>
+			</div>
+			<div class="col-md-2 col-sm-6">
+				<h4>Contact</h4>
+				<ul>
+					<li><i class="fa fa-phone fa-fw"></i> <a href="tel:+1 347-480-1610">+1 347-480-1610</a></li>
+					<li><i class="fa fa-envelope fa-fw"></i> <a href="mailto:info@sematext.com">info@sematext.com</a></li>
+					<li><i class="fa fa-map-marker fa-fw"></i> <a href="https://www.google.com/maps/place/540+President+St,+Brooklyn,+NY+11215,+EE.+UU./@40.6773068,-73.9875385,17z/data=!3m1!4b1!4m5!3m4!1s0x89c25a55722bfff7:0x2143eab42dc5c96d!8m2!3d40.67713!4d-73.984982" target="_blank">Brooklyn, NY USA</a></li>
+					<li class="social-networks">
+						<a href="https://twitter.com/sematext"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+						<a href="https://www.facebook.com/Sematext/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+						<a href="https://github.com/sematext"><i class="fa fa-github" aria-hidden="true"></i></a>
+						<a href="https://www.linkedin.com/company/294493/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-md-3 col-sm-12">
+				<p>
+					<strong>&copy; Sematext Group. All rights reserved</strong>
+					<br /><a href="/legal/terms-of-service/">Terms Of Service</a> · <a href="/legal/privacy/">Privacy Policy</a>
+				</p>
+			</div>
+		</div>
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+
+			<div class="container">
+
+				<div class="copyright col-md-12">
+					<p>
+						Apache Lucene, Apache Solr and their respective logos are trademarks of the Apache Software Foundation.
+						Elasticsearch, Kibana, Logstash, and Beats are trademarks of Elasticsearch BV, registered in the U.S.
+						and in other countries. Sematext Group, Inc. is not affiliated with Elasticsearch BV.
+					</p>
+
+									</div>
+
+				
+			</div>
+			<!-- .site-info -->
+
+			
+		</footer>
+		<!-- #colophon -->
+	</div>
+
+</div>
+<!-- #page -->
+
+<template id="resources-most-popular">
+	<div id="resources-most-popular-box">
+		<div class="rsc-mostpopular-head">
+			<h3>Most Popular</h3>
+			<div class="rsc-mostpopular-nav">
+				<a href="#" id="prev">&lsaquo;</a>
+				<a href="#" id="next">&rsaquo;</a>
+			</div>
+		</div>
+		<figure>
+			<img data-baseurl="https://sematext.com/wp-content/themes/sematext-next" alt="img" />
+		</figure>
+		<div class="rsc-mostpopular-footer">
+			<h4></h4>
+			<p><a href="#" id="rsc-download-link">Download Yours</a></p>
+		</div>
+	</div>
+</template>
+
+
+  <script type="text/javascript">
+    jQuery( document ).ready( function( $ ){
+      if ( $( window ).width() >= 767 ){
+        $( '.navbar-nav > li.menu-item > a' ).click( function(){
+          window.location = $( this ).attr( 'href' );
+        });
+      }
+    });
+  </script>
+<script>jQuery(document).ready(function ($) { $('p').selectionSharer();});</script>        <script type="text/javascript">
+            (function(){
+                document.addEventListener('DOMContentLoaded', function(){
+                    let wpp_widgets = document.querySelectorAll('.popular-posts-sr');
+
+                    if ( wpp_widgets ) {
+                        for (let i = 0; i < wpp_widgets.length; i++) {
+                            let wpp_widget = wpp_widgets[i];
+                            WordPressPopularPosts.theme(wpp_widget);
+                        }
+                    }
+                });
+            })();
+        </script>
+                <script>
+            var WPPImageObserver = null;
+
+            function wpp_load_img(img) {
+                if ( ! 'imgSrc' in img.dataset || ! img.dataset.imgSrc )
+                    return;
+
+                img.src = img.dataset.imgSrc;
+
+                if ( 'imgSrcset' in img.dataset ) {
+                    img.srcset = img.dataset.imgSrcset;
+                    img.removeAttribute('data-img-srcset');
+                }
+
+                img.classList.remove('wpp-lazyload');
+                img.removeAttribute('data-img-src');
+                img.classList.add('wpp-lazyloaded');
+            }
+
+            function wpp_observe_imgs(){
+                let wpp_images = document.querySelectorAll('img.wpp-lazyload'),
+                    wpp_widgets = document.querySelectorAll('.popular-posts-sr');
+
+                if ( wpp_images.length || wpp_widgets.length ) {
+                    if ( 'IntersectionObserver' in window ) {
+                        WPPImageObserver = new IntersectionObserver(function(entries, observer) {
+                            entries.forEach(function(entry) {
+                                if (entry.isIntersecting) {
+                                    let img = entry.target;
+                                    wpp_load_img(img);
+                                    WPPImageObserver.unobserve(img);
+                                }
+                            });
+                        });
+
+                        if ( wpp_images.length ) {
+                            wpp_images.forEach(function(image) {
+                                WPPImageObserver.observe(image);
+                            });
+                        }
+
+                        if ( wpp_widgets.length ) {
+                            for (var i = 0; i < wpp_widgets.length; i++) {
+                                let wpp_widget_images = wpp_widgets[i].querySelectorAll('img.wpp-lazyload');
+
+                                if ( ! wpp_widget_images.length && wpp_widgets[i].shadowRoot ) {
+                                    wpp_widget_images = wpp_widgets[i].shadowRoot.querySelectorAll('img.wpp-lazyload');
+                                }
+
+                                if ( wpp_widget_images.length ) {
+                                    wpp_widget_images.forEach(function(image) {
+                                        WPPImageObserver.observe(image);
+                                    });
+                                }
+                            }
+                        }
+                    } /** Fallback for older browsers */
+                    else {
+                        if ( wpp_images.length ) {
+                            for (var i = 0; i < wpp_images.length; i++) {
+                                wpp_load_img(wpp_images[i]);
+                                wpp_images[i].classList.remove('wpp-lazyloaded');
+                            }
+                        }
+
+                        if ( wpp_widgets.length ) {
+                            for (var j = 0; j < wpp_widgets.length; j++) {
+                                let wpp_widget = wpp_widgets[j],
+                                    wpp_widget_images = wpp_widget.querySelectorAll('img.wpp-lazyload');
+
+                                if ( ! wpp_widget_images.length && wpp_widget.shadowRoot ) {
+                                    wpp_widget_images = wpp_widget.shadowRoot.querySelectorAll('img.wpp-lazyload');
+                                }
+
+                                if ( wpp_widget_images.length ) {
+                                    for (var k = 0; k < wpp_widget_images.length; k++) {
+                                        wpp_load_img(wpp_widget_images[k]);
+                                        wpp_widget_images[k].classList.remove('wpp-lazyloaded');
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+                wpp_observe_imgs();
+
+                // When an ajaxified WPP widget loads,
+                // Lazy load its images
+                document.addEventListener('wpp-onload', function(){
+                    wpp_observe_imgs();
+                });
+            });
+        </script>
+        
+<style type="text/css">
+    #wpfront-notification-bar 
+    {
+        background: #6e39ff;
+        background: -moz-linear-gradient(top, #6e39ff 0%, #6e39ff 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6e39ff), color-stop(100%,#6e39ff));
+        background: -webkit-linear-gradient(top, #6e39ff 0%,#6e39ff 100%);
+        background: -o-linear-gradient(top, #6e39ff 0%,#6e39ff 100%);
+        background: -ms-linear-gradient(top, #6e39ff 0%,#6e39ff 100%);
+        background: linear-gradient(to bottom, #6e39ff 0%, #6e39ff 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6e39ff', endColorstr='#6e39ff',GradientType=0 );
+    }
+
+    #wpfront-notification-bar div.wpfront-message
+    {
+        color: #ffffff;
+    }
+
+    #wpfront-notification-bar a.wpfront-button
+    {
+        background: #4524a0;
+        background: -moz-linear-gradient(top, #4524a0 0%, #4524a0 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4524a0), color-stop(100%,#4524a0));
+        background: -webkit-linear-gradient(top, #4524a0 0%,#4524a0 100%);
+        background: -o-linear-gradient(top, #4524a0 0%,#4524a0 100%);
+        background: -ms-linear-gradient(top, #4524a0 0%,#4524a0 100%);
+        background: linear-gradient(to bottom, #4524a0 0%, #4524a0 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4524a0', endColorstr='#4524a0',GradientType=0 );
+
+        color: #ffffff;
+    }
+
+    #wpfront-notification-bar-open-button
+    {
+        background-color: #4524a0;
+    }
+
+    #wpfront-notification-bar  div.wpfront-close 
+    {
+        border: 1px solid #4524a0;
+        background-color: #4524a0;
+        color: #272727;
+    }
+
+    #wpfront-notification-bar  div.wpfront-close:hover 
+    {
+        border: 1px solid #272727;
+        background-color: #272727;
+    }
+</style>
+
+
+<div id="wpfront-notification-bar-spacer"  style="display: none;">
+    <div id="wpfront-notification-bar-open-button" class="top wpfront-bottom-shadow"></div>
+    <div id="wpfront-notification-bar" class="wpfront-fixed ">
+                <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td>
+                    <div class="wpfront-message">
+                        New! Improved SSL Certificate Monitoring &amp; Alerting in Synthetics. <a href="https://sematext.com/product-updates/#/2020/improved-ssl-certificate-monitoring-with-alerting">Learn more</a>                    </div>
+                    <div>
+                                            </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<style type="text/css">
+.navbar-fixed-top { top: 40px; }
+.breadcrumb, .breadcrumb1 { top: 89px; }
+#wpfront-notification-bar table,
+#wpfront-notification-bar tbody,
+#wpfront-notification-bar tr,
+#wpfront-notification-bar td {
+    display: block;
+    width: 100%;
+    padding: 0;
+    vertical-align: middle;
+}
+#wpfront-notification-bar td {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+}
+.wpfront-message {
+    font-size: 15px;
+    font-weight: 400;
+}
+.wpfront-message a {
+    display: inline-block;
+    background: #4524a0;
+    color: #fff;
+    border-radius: 3px;
+    border: none;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 6px 8px;
+    margin: 0 0 0 8px;
+}
+.wpfront-message a:hover { background: #272727; }
+
+@media only screen and (max-width: 600px)  {
+    #wpfront-notification-bar { 
+        max-width: 100%;
+        overflow: hidden;
+        height: auto;
+        min-height: 40px;        
+    }
+    #wpfront-notification-bar td {
+        height: auto;
+        min-height: 40px;
+    justify-content: flex-start;
+    padding: 5px 105px 5px 10px;
+    }
+    .wpfront-message {
+        font-size: 11px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    }
+    .wpfront-message a {
+        font-size: 11px;
+        padding: 3px 5px;
+        margin: 0 0 0 4px;
+    position: absolute;
+    right: 10px;
+    top: 9px;
+    }
+}
+body.logged-in .navbar-fixed-top { top: 72px; }
+body.logged-in .breadcrumb1 { top: 120px; }
+.affix { top: 40px; }
+body.logged-in .card {
+    margin-top: 190px;
+    margin-bottom: 30px;
+}
+.card {
+    margin-top: 160px;
+    margin-bottom: 30px;
+}</style>
+<script type="text/javascript">if(typeof wpfront_notification_bar == "function") wpfront_notification_bar({"position":1,"height":40,"fixed_position":"on","animate_delay":0,"close_button":false,"button_action_close_bar":false,"auto_close_after":0,"display_after":0,"is_admin_bar_showing":false,"display_open_button":false,"keep_closed":false,"keep_closed_for":0,"position_offset":0,"display_scroll":false,"display_scroll_offset":0});</script>
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/sematext.com\/blog\/log-analysis\/":48226};
+	</script>
+					<div id="sharing_email" style="display: none;">
+		<form action="/blog/log-analysis/" method="post">
+			<label for="target_email">Send to Email Address</label>
+			<input type="email" name="target_email" id="target_email" value="" />
+
+			
+				<label for="source_name">Your Name</label>
+				<input type="text" name="source_name" id="source_name" value="" />
+
+				<label for="source_email">Your Email Address</label>
+				<input type="email" name="source_email" id="source_email" value="" />
+
+						<input type="text" id="jetpack-source_f_name" name="source_f_name" class="input" value="" size="25" autocomplete="off" title="This field is for validation and should not be changed" />
+			
+			<img style="float: right; display: none" class="loading" src="https://sematext.com/wp-content/plugins/jetpack/modules/sharedaddy/images/loading.gif" alt="loading" width="16" height="16" />
+			<input type="submit" value="Send Email" class="sharing_send" />
+			<a rel="nofollow" href="#cancel" class="sharing_cancel" role="button">Cancel</a>
+
+			<div class="errors errors-1" style="display: none;">
+				Post was not sent - check your email addresses!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Email check failed, please try again			</div>
+
+			<div class="errors errors-3" style="display: none;">
+				Sorry, your blog cannot share posts by email.			</div>
+		</form>
+	</div>
+<script type='text/javascript' src='https://sematext.com/wp-content/themes/sematext-next/inc/js/custom_script.js?ver=1.1'></script>
+<script type='text/javascript' src='https://sematext.com/wp-includes/js/comment-reply.min.js?ver=5.4.2'></script>
+<script type='text/javascript' src='https://sematext.com/wp-includes/js/wp-embed.min.js?ver=5.4.2'></script>
+<script type='text/javascript' src='https://sematext.com/wp-content/plugins/selection-sharer/js/selection-sharer.js?ver=0.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://sematext.com/wp-content/plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=8.5'></script>
+<script type='text/javascript'>
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-twitter', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-facebook', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-linkedin', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
+				return false;
+			});
+</script>
+<script type='text/javascript' src='https://stats.wp.com/e-202038.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:8.5',blog:'107910772',post:'48226',tz:'-4',srv:'sematext.com'} ]);
+	_stq.push([ 'clickTrackerInit', '107910772', '48226' ]);
+</script>
+
+
+	<!-- LinkedIn Insight Tag -->
+	<script type="text/javascript">
+	    _linkedin_partner_id = "2338377";
+	    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+	    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+
+	    (function(){var s = document.getElementsByTagName("script")[0]; var b = document.createElement("script"); b.type = "text/javascript";b.async = true; b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js"; s.parentNode.insertBefore(b, s);})();
+	</script>
+	<noscript><img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=2338377&fmt=gif" /></noscript>
+	<!-- End of LinkedIn Insight Tag -->
+
+	<script async defer src="https://sematext.com/wp-content/themes/sematext-theme/inc/js/smtuc.js"></script>
+
+</body>
+</html>
+
+<!--
+Performance optimized by W3 Total Cache. Learn more: https://www.boldgrid.com/w3-total-cache/
+
+Object Caching 268/276 objects using disk
+Page Caching using disk: enhanced 
+Minified using disk
+Database Caching 2/7 queries in 0.005 seconds using disk
+
+Served from: sematext.com @ 2020-09-18 11:47:43 by W3 Total Cache
+-->
